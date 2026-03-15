@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prophetic Chronicles — Sacred Narratives of the Ages</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: #7A6030;
+    --deep: #080A0F;
+    --panel: #0D1118;
+    --panel2: #111820;
+    --border: rgba(201,168,76,0.18);
+    --text: #E8DCC8;
+    --text-dim: #9A8A70;
+    --dajjal: #8B1A1A;
+    --dajjal-light: #D43B3B;
+    --isha: #1A4A8B;
+    --isha-light: #4A8BDB;
+    --meshiah: #1A6B3A;
+    --meshiah-light: #3ABB6A;
+    --creator: #5A1A8B;
+    --creator-light: #A050E0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--deep);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── STARFIELD ── */
+  #stars {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse at 20% 30%, #0a0d1a 0%, #080A0F 60%);
+    overflow: hidden;
+  }
+  #stars::before, #stars::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(201,168,76,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 45%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 25%, rgba(201,168,76,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 70%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 85% 10%, rgba(201,168,76,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 55%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 15% 80%, rgba(201,168,76,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 60%, rgba(201,168,76,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 78% 35%, rgba(255,255,255,0.4) 0%, transparent 100%);
+    background-size: 400px 400px;
+    animation: twinkle 8s ease-in-out infinite alternate;
+  }
+  #stars::after {
+    background-image:
+      radial-gradient(1px 1px at 5% 50%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 20%, rgba(201,168,76,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 75%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 40%, rgba(201,168,76,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 85%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 95% 20%, rgba(201,168,76,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 12% 65%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 50% 5%, rgba(201,168,76,0.5) 0%, transparent 100%);
+    background-size: 600px 600px;
+    animation: twinkle 12s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.7; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index: 2;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-emblem {
+    font-size: 80px; margin-bottom: 20px;
+    filter: drop-shadow(0 0 30px rgba(201,168,76,0.5));
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+  .hero-overtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 11px; letter-spacing: 0.5em;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 1s 0.3s forwards;
+  }
+  .hero-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(36px, 7vw, 80px);
+    font-weight: 900; line-height: 1.1;
+    color: var(--gold-light);
+    text-shadow: 0 0 60px rgba(201,168,76,0.4), 0 4px 20px rgba(0,0,0,0.8);
+    margin-bottom: 16px;
+    opacity: 0; animation: fadeUp 1s 0.5s forwards;
+  }
+  .hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(14px, 2vw, 18px);
+    letter-spacing: 0.3em; color: var(--gold-dim);
+    margin-bottom: 50px;
+    opacity: 0; animation: fadeUp 1s 0.7s forwards;
+  }
+  .hero-desc {
+    max-width: 680px; font-size: 19px;
+    color: var(--text-dim); margin-bottom: 60px;
+    font-style: italic;
+    opacity: 0; animation: fadeUp 1s 0.9s forwards;
+  }
+  .hero-cards {
+    display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+    opacity: 0; animation: fadeUp 1s 1.1s forwards;
+  }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+
+  .char-card {
+    width: 160px; padding: 22px 16px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+    backdrop-filter: blur(8px);
+  }
+  .char-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    transition: opacity 0.3s;
+  }
+  .char-card[data-char="dajjal"]::before { background: linear-gradient(90deg, transparent, var(--dajjal-light), transparent); }
+  .char-card[data-char="isha"]::before { background: linear-gradient(90deg, transparent, var(--isha-light), transparent); }
+  .char-card[data-char="meshiah"]::before { background: linear-gradient(90deg, transparent, var(--meshiah-light), transparent); }
+  .char-card[data-char="creator"]::before { background: linear-gradient(90deg, transparent, var(--creator-light), transparent); }
+  .char-card:hover { transform: translateY(-6px); background: rgba(255,255,255,0.06); }
+  .char-card .card-icon { font-size: 36px; margin-bottom: 10px; display: block; }
+  .char-card .card-name {
+    font-family: 'Cinzel', serif; font-size: 13px;
+    letter-spacing: 0.15em; color: var(--gold);
+  }
+  .char-card .card-sub { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8,10,15,0.92); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 64px;
+    transform: translateY(-100%); transition: transform 0.4s;
+  }
+  nav.visible { transform: translateY(0); }
+  .nav-logo {
+    font-family: 'Cinzel Decorative', serif; font-size: 16px;
+    color: var(--gold); letter-spacing: 0.1em;
+  }
+  .nav-links { display: flex; gap: 6px; }
+  .nav-btn {
+    font-family: 'Cinzel', serif; font-size: 11px;
+    letter-spacing: 0.15em; color: var(--text-dim);
+    background: none; border: 1px solid transparent;
+    padding: 7px 14px; cursor: pointer;
+    border-radius: 1px; transition: all 0.2s;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    color: var(--gold); border-color: var(--border);
+  }
+  .nav-btn[data-char="dajjal"].active { color: var(--dajjal-light); border-color: rgba(139,26,26,0.4); }
+  .nav-btn[data-char="isha"].active { color: var(--isha-light); border-color: rgba(26,74,139,0.4); }
+  .nav-btn[data-char="meshiah"].active { color: var(--meshiah-light); border-color: rgba(26,107,58,0.4); }
+  .nav-btn[data-char="creator"].active { color: var(--creator-light); border-color: rgba(90,26,139,0.4); }
+
+  /* ── SECTION WRAPPER ── */
+  .section-wrap {
+    position: relative; z-index: 2;
+    display: none; min-height: 100vh;
+    animation: sectionIn 0.6s ease forwards;
+  }
+  .section-wrap.active { display: block; }
+  @keyframes sectionIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+
+  /* ── CHARACTER HEADER ── */
+  .char-header {
+    position: relative; overflow: hidden;
+    min-height: 500px;
+    display: flex; align-items: flex-end;
+    padding: 60px 60px 60px;
+  }
+  .char-header-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+  }
+  .char-header-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, var(--deep) 20%, transparent 80%);
+  }
+  .char-header-overlay2 {
+    position: absolute; inset: 0;
+    opacity: 0.4;
+  }
+  .char-header-content { position: relative; z-index: 2; max-width: 900px; }
+  .char-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 0.5em; text-transform: uppercase;
+    padding: 5px 16px; border: 1px solid;
+    margin-bottom: 20px; border-radius: 1px;
+  }
+  .char-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(44px, 8vw, 96px);
+    font-weight: 900; line-height: 1;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.8);
+    margin-bottom: 16px;
+  }
+  .char-epithet {
+    font-size: 20px; font-style: italic;
+    color: var(--text-dim); margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+  .char-traditions {
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .tradition-tag {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 0.25em; padding: 4px 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1px;
+  }
+
+  /* ── CONTENT GRID ── */
+  .content-area {
+    max-width: 1400px; margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* ── STORY SECTION ── */
+  .story-block {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: start;
+    margin-bottom: 80px;
+  }
+  @media(max-width:900px){ .story-block{ grid-template-columns:1fr; } }
+  .story-text h2 {
+    font-family: 'Cinzel', serif; font-size: 28px;
+    color: var(--gold); margin-bottom: 20px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
+  .story-text p { color: var(--text-dim); margin-bottom: 16px; font-size: 17px; }
+  .story-text blockquote {
+    border-left: 2px solid var(--gold-dim);
+    padding: 12px 20px; margin: 20px 0;
+    background: rgba(201,168,76,0.04);
+    font-style: italic; font-size: 16px;
+    color: var(--text-dim);
+  }
+  .story-visual {
+    position: sticky; top: 80px;
+  }
+  .visual-frame {
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+  .visual-frame img {
+    width: 100%; display: block;
+    filter: sepia(20%) brightness(0.85);
+    transition: filter 0.3s;
+  }
+  .visual-frame:hover img { filter: sepia(0%) brightness(1); }
+  .visual-caption {
+    padding: 12px 16px; background: var(--panel);
+    font-size: 12px; font-family: 'Cinzel', serif;
+    letter-spacing: 0.1em; color: var(--text-dim);
+  }
+
+  /* SVG VISUAL ARTS */
+  .svg-art { width: 100%; display: block; }
+
+  /* ── EVENTS SECTION ── */
+  .events-title {
+    font-family: 'Cinzel Decorative', serif; font-size: 32px;
+    color: var(--gold); margin-bottom: 40px;
+    text-align: center;
+    display: flex; align-items: center; gap: 20px; justify-content: center;
+  }
+  .events-title::before, .events-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  .events-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px; margin-bottom: 80px;
+  }
+
+  .event-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 2px; overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .event-card:hover { transform: translateY(-4px); border-color: var(--gold-dim); }
+  .event-card-art { height: 180px; overflow: hidden; position: relative; }
+  .event-card-art svg { width: 100%; height: 100%; }
+  .event-num {
+    position: absolute; top: 12px; left: 12px;
+    font-family: 'Cinzel Decorative', serif; font-size: 28px; font-weight: 900;
+    opacity: 0.2; line-height: 1;
+    pointer-events: none;
+  }
+  .event-body { padding: 20px; }
+  .event-label {
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 0.3em; color: var(--gold-dim);
+    margin-bottom: 8px;
+  }
+  .event-title {
+    font-family: 'Cinzel', serif; font-size: 16px;
+    color: var(--gold-light); margin-bottom: 10px; line-height: 1.3;
+  }
+  .event-desc { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+  .event-traditions {
+    display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .etag {
+    font-size: 10px; padding: 2px 8px;
+    border-radius: 20px;
+    font-family: 'Cinzel', serif; letter-spacing: 0.1em;
+  }
+  .etag.islam { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .etag.christian { background: rgba(74,139,219,0.15); color: #7AB0E8; }
+  .etag.jewish { background: rgba(58,187,106,0.15); color: #7AE8A0; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding: 40px 0; margin-bottom: 80px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+    width: 1px; background: linear-gradient(to bottom, transparent, var(--border), transparent);
+    transform: translateX(-50%);
+  }
+  @media(max-width:700px){ .timeline::before { left: 30px; } }
+  .tl-item {
+    display: flex; gap: 40px; align-items: flex-start;
+    margin-bottom: 48px; position: relative;
+  }
+  .tl-item:nth-child(even) { flex-direction: row-reverse; }
+  @media(max-width:700px){
+    .tl-item { flex-direction: column !important; padding-left: 64px; }
+  }
+  .tl-side { flex: 1; }
+  .tl-center {
+    display: flex; flex-direction: column; align-items: center; gap: 0;
+    flex-shrink: 0;
+  }
+  .tl-dot {
+    width: 14px; height: 14px; border-radius: 50%;
+    border: 2px solid; margin-top: 6px;
+    position: relative; z-index: 1;
+    box-shadow: 0 0 12px currentColor;
+  }
+  .tl-card {
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 18px 22px; border-radius: 2px;
+    max-width: 400px;
+  }
+  .tl-card-num {
+    font-family: 'Cinzel Decorative', serif; font-size: 11px;
+    opacity: 0.4; margin-bottom: 6px;
+  }
+  .tl-card-title {
+    font-family: 'Cinzel', serif; font-size: 15px;
+    color: var(--gold-light); margin-bottom: 8px;
+  }
+  .tl-card-text { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+  /* ── SCRIPTURE QUOTES ── */
+  .quotes-section { margin-bottom: 80px; }
+  .quotes-title {
+    font-family: 'Cinzel', serif; font-size: 20px;
+    color: var(--gold); text-align: center; margin-bottom: 30px;
+    letter-spacing: 0.2em;
+  }
+  .quotes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .quote-card {
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 24px; border-radius: 2px;
+    position: relative; overflow: hidden;
+  }
+  .quote-card::before {
+    content: '\201C';
+    position: absolute; top: -10px; left: 16px;
+    font-size: 100px; color: rgba(201,168,76,0.08);
+    font-family: Georgia, serif; line-height: 1;
+    pointer-events: none;
+  }
+  .quote-text { font-style: italic; font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 12px; }
+  .quote-source { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em; color: var(--gold-dim); }
+
+  /* ── SECTION DIVIDER ── */
+  .divider {
+    display: flex; align-items: center; gap: 20px;
+    margin: 60px 0 40px;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-icon { font-size: 24px; opacity: 0.6; }
+
+  /* ── DAJJAL THEME ── */
+  [data-theme="dajjal"] .char-badge { color: var(--dajjal-light); border-color: rgba(139,26,26,0.5); }
+  [data-theme="dajjal"] .char-name { color: #FF6B6B; }
+  [data-theme="dajjal"] .char-header-overlay2 { background: radial-gradient(ellipse at 50% 100%, rgba(139,26,26,0.5), transparent 70%); }
+  [data-theme="dajjal"] .tl-dot { border-color: var(--dajjal-light); color: var(--dajjal-light); }
+  [data-theme="dajjal"] .story-text h2 { color: var(--dajjal-light); }
+  [data-theme="dajjal"] .events-title { color: var(--dajjal-light); }
+
+  /* ── ISHA THEME ── */
+  [data-theme="isha"] .char-badge { color: var(--isha-light); border-color: rgba(26,74,139,0.5); }
+  [data-theme="isha"] .char-name { color: #8BC4FF; }
+  [data-theme="isha"] .char-header-overlay2 { background: radial-gradient(ellipse at 50% 100%, rgba(26,74,139,0.5), transparent 70%); }
+  [data-theme="isha"] .tl-dot { border-color: var(--isha-light); color: var(--isha-light); }
+  [data-theme="isha"] .story-text h2 { color: var(--isha-light); }
+  [data-theme="isha"] .events-title { color: var(--isha-light); }
+
+  /* ── MESHIAH THEME ── */
+  [data-theme="meshiah"] .char-badge { color: var(--meshiah-light); border-color: rgba(26,107,58,0.5); }
+  [data-theme="meshiah"] .char-name { color: #7AFFA0; }
+  [data-theme="meshiah"] .char-header-overlay2 { background: radial-gradient(ellipse at 50% 100%, rgba(26,107,58,0.5), transparent 70%); }
+  [data-theme="meshiah"] .tl-dot { border-color: var(--meshiah-light); color: var(--meshiah-light); }
+  [data-theme="meshiah"] .story-text h2 { color: var(--meshiah-light); }
+  [data-theme="meshiah"] .events-title { color: var(--meshiah-light); }
+
+  /* ── CREATOR THEME ── */
+  [data-theme="creator"] .char-badge { color: var(--creator-light); border-color: rgba(90,26,139,0.5); }
+  [data-theme="creator"] .char-name { color: #C880FF; }
+  [data-theme="creator"] .char-header-overlay2 { background: radial-gradient(ellipse at 50% 100%, rgba(90,26,139,0.5), transparent 70%); }
+  [data-theme="creator"] .tl-dot { border-color: var(--creator-light); color: var(--creator-light); }
+  [data-theme="creator"] .story-text h2 { color: var(--creator-light); }
+  [data-theme="creator"] .events-title { color: var(--creator-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 2;
+    border-top: 1px solid var(--border);
+    padding: 40px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+    background: rgba(0,0,0,0.3);
+  }
+  .footer-note { font-size: 13px; color: var(--text-dim); font-style: italic; }
+  .footer-logo { font-family: 'Cinzel Decorative', serif; font-size: 18px; color: var(--gold); }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease; }
+  .reveal.shown { opacity: 1; transform: none; }
+
+  /* ── MOBILE ── */
+  @media(max-width:600px){
+    .char-header { padding: 40px 20px; }
+    .content-area { padding: 40px 20px; }
+    nav { padding: 0 16px; }
+    .nav-links { gap: 2px; }
+    .nav-btn { padding: 6px 8px; font-size: 9px; }
+    footer { padding: 30px 20px; }
+    .hero-cards { gap: 12px; }
+    .char-card { width: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="stars"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo">✦ Prophetic Chronicles</div>
+  <div class="nav-links">
+    <button class="nav-btn" onclick="showHome()">Home</button>
+    <button class="nav-btn" data-char="dajjal" onclick="showSection('dajjal')">Dajjal</button>
+    <button class="nav-btn" data-char="isha" onclick="showSection('isha')">Isha / Jesus</button>
+    <button class="nav-btn" data-char="meshiah" onclick="showSection('meshiah')">Meshiah</button>
+    <button class="nav-btn" data-char="creator" onclick="showSection('creator')">The Creator</button>
+  </div>
+</nav>
+
+<!-- HOME / HERO -->
+<div id="home-section">
+  <section class="hero">
+    <div class="hero-emblem">☽✦✡</div>
+    <p class="hero-overtitle">Sacred Narratives of Three Traditions</p>
+    <h1 class="hero-title">Prophetic Chronicles</h1>
+    <p class="hero-subtitle">Islam · Christianity · Judaism</p>
+    <p class="hero-desc">A scholarly journey through the mythic, theological, and prophetic figures that shaped the Abrahamic faiths — exploring over 20 sacred events for each character across all three traditions.</p>
+    <div class="hero-cards">
+      <div class="char-card" data-char="dajjal" onclick="showSection('dajjal')">
+        <span class="card-icon">👁</span>
+        <div class="card-name">Dajjal</div>
+        <div class="card-sub">The False Messiah</div>
+      </div>
+      <div class="char-card" data-char="isha" onclick="showSection('isha')">
+        <span class="card-icon">✝</span>
+        <div class="card-name">Isha / Jesus</div>
+        <div class="card-sub">Prophet & Messiah</div>
+      </div>
+      <div class="char-card" data-char="meshiah" onclick="showSection('meshiah')">
+        <span class="card-icon">✡</span>
+        <div class="card-name">Meshiah</div>
+        <div class="card-sub">The Anointed One</div>
+      </div>
+      <div class="char-card" data-char="creator" onclick="showSection('creator')">
+        <span class="card-icon">☀</span>
+        <div class="card-name">The Creator</div>
+        <div class="card-sub">God · Allah · Yahweh</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ DAJJAL SECTION -->
+<div id="dajjal-section" class="section-wrap" data-theme="dajjal">
+  <div class="char-header">
+    <div class="char-header-bg" style="background:linear-gradient(135deg,#1a0000 0%,#3a0808 40%,#0a0000 100%);">
+      <!-- Dajjal SVG Art Background -->
+      <svg viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.35">
+        <defs>
+          <radialGradient id="dg1" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#8B1A1A" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1400" height="500" fill="url(#dg1)"/>
+        <!-- Eye of Dajjal -->
+        <ellipse cx="700" cy="250" rx="180" ry="100" fill="none" stroke="#D43B3B" stroke-width="1" opacity="0.4"/>
+        <ellipse cx="700" cy="250" rx="140" ry="70" fill="none" stroke="#D43B3B" stroke-width="0.5" opacity="0.3"/>
+        <circle cx="700" cy="250" r="55" fill="#1A0000" stroke="#D43B3B" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="700" cy="250" r="30" fill="#D43B3B" opacity="0.2"/>
+        <!-- X over eye -->
+        <line x1="655" y1="210" x2="745" y2="290" stroke="#D43B3B" stroke-width="2.5" opacity="0.6"/>
+        <line x1="745" y1="210" x2="655" y2="290" stroke="#D43B3B" stroke-width="2.5" opacity="0.6"/>
+        <!-- Radiating lines -->
+        <line x1="700" y1="130" x2="700" y2="30" stroke="#8B1A1A" stroke-width="0.5" opacity="0.3"/>
+        <line x1="820" y1="170" x2="900" y2="110" stroke="#8B1A1A" stroke-width="0.5" opacity="0.3"/>
+        <line x1="580" y1="170" x2="500" y2="110" stroke="#8B1A1A" stroke-width="0.5" opacity="0.3"/>
+        <!-- Arabic-inspired geometry -->
+        <polygon points="700,80 760,200 700,170 640,200" fill="none" stroke="#D43B3B" stroke-width="0.5" opacity="0.25"/>
+        <!-- Chains -->
+        <path d="M200,400 Q400,350 600,380 Q700,390 800,370 Q1000,340 1200,400" fill="none" stroke="#5A1A1A" stroke-width="1.5" opacity="0.4" stroke-dasharray="8,4"/>
+        <path d="M150,430 Q350,390 550,410 Q700,420 850,400 Q1050,375 1250,430" fill="none" stroke="#5A1A1A" stroke-width="1" opacity="0.3" stroke-dasharray="8,4"/>
+        <!-- Dark smoke wisps -->
+        <path d="M100,200 Q200,150 300,200 Q400,250 500,180" fill="none" stroke="#8B1A1A" stroke-width="0.8" opacity="0.2"/>
+        <path d="M900,300 Q1000,250 1100,280 Q1200,310 1300,260" fill="none" stroke="#8B1A1A" stroke-width="0.8" opacity="0.2"/>
+      </svg>
+    </div>
+    <div class="char-header-overlay"></div>
+    <div class="char-header-overlay2"></div>
+    <div class="char-header-content">
+      <div class="char-badge">The False Messiah · الدجال</div>
+      <h1 class="char-name">Dajjal</h1>
+      <p class="char-epithet">"He who shall deceive the world at the End of Times"</p>
+      <div class="char-traditions">
+        <span class="tradition-tag">☽ Islam — Al-Masīḥ ad-Dajjāl</span>
+        <span class="tradition-tag">✝ Christianity — Antichrist</span>
+        <span class="tradition-tag">✡ Judaism — Armilus</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <!-- Story -->
+    <div class="story-block reveal">
+      <div class="story-text">
+        <h2>Origin & Nature</h2>
+        <p>Across the three Abrahamic faiths, a terrifying figure looms at the edge of time — a being of immense power, magnificent deception, and one blinded eye. In Islam, he is <em>Al-Masīḥ ad-Dajjāl</em>, "the Deceiving Messiah," a man of extraordinary ability who will claim divinity and lead multitudes astray.</p>
+        <p>In Christian eschatology, a parallel figure emerges — the Antichrist — described in the letters of John and elaborated in Revelation as the Beast, the man of lawlessness who sets himself above God. In Jewish tradition, the figure of <em>Armilus</em> in later midrashic literature bears startling similarities: a false king who defeats early attempts at redemption before being destroyed by the true Meshiah.</p>
+        <blockquote>"Between the creation of Adam and the coming of the Hour, there is no matter greater than the Dajjal." — Hadith, Sahih Muslim</blockquote>
+        <p>His distinguishing mark across traditions: he is blind or defective in one eye, and the word <em>Kafir</em> (disbeliever) is written on his forehead — visible to every true believer. He commands fire and rivers, resurrects the dead as an illusion, and travels the earth at tremendous speed.</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-frame">
+          <svg class="svg-art" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="dajjal-bg" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#2A0A0A"/>
+                <stop offset="100%" stop-color="#0D0305"/>
+              </radialGradient>
+              <radialGradient id="eye-glow" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#D43B3B" stop-opacity="0.8"/>
+                <stop offset="60%" stop-color="#8B1A1A" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="500" height="400" fill="url(#dajjal-bg)"/>
+            <!-- Robed figure silhouette -->
+            <ellipse cx="250" cy="320" rx="100" ry="30" fill="#1a0505" opacity="0.8"/>
+            <!-- Body -->
+            <path d="M215,200 Q210,260 195,340 Q230,330 250,335 Q270,330 305,340 Q290,260 285,200 Z" fill="#3A0808"/>
+            <!-- Robe folds -->
+            <path d="M225,210 Q220,260 210,320" fill="none" stroke="#5A1010" stroke-width="1" opacity="0.5"/>
+            <path d="M275,210 Q280,260 290,320" fill="none" stroke="#5A1010" stroke-width="1" opacity="0.5"/>
+            <!-- Head -->
+            <ellipse cx="250" cy="170" rx="42" ry="50" fill="#2A0505"/>
+            <!-- Turban/wrap -->
+            <path d="M208,160 Q220,130 250,125 Q280,130 292,160 Q285,145 250,140 Q215,145 208,160 Z" fill="#3A1A00" opacity="0.9"/>
+            <!-- Left eye closed/scarred -->
+            <ellipse cx="236" cy="168" rx="12" ry="8" fill="#1A0000"/>
+            <path d="M224,168 L248,168" stroke="#8B4444" stroke-width="1.5"/>
+            <!-- Right eye — glowing red -->
+            <ellipse cx="264" cy="168" rx="12" ry="8" fill="url(#eye-glow)"/>
+            <circle cx="264" cy="168" r="5" fill="#D43B3B"/>
+            <circle cx="264" cy="168" r="2" fill="#FF6B6B"/>
+            <!-- Glow around right eye -->
+            <ellipse cx="264" cy="168" rx="20" ry="14" fill="none" stroke="#D43B3B" stroke-width="0.5" opacity="0.5"/>
+            <!-- Text on forehead -->
+            <text x="250" y="150" text-anchor="middle" font-size="9" fill="#8B1A1A" font-family="serif" opacity="0.8">كافر</text>
+            <!-- Beard suggestion -->
+            <path d="M230,195 Q250,215 270,195" fill="#1A0A00" stroke="#3A1A00" stroke-width="1"/>
+            <!-- Raised hand with fire -->
+            <path d="M285,200 Q310,185 325,165 Q330,155 325,145 Q320,165 305,170 Q315,155 312,140 Q305,160 295,165 Q302,150 298,138 Q290,158 285,165 Q290,175 288,185 Z" fill="#D43B3B" opacity="0.85"/>
+            <path d="M287,202 Q312,187 326,168 Q318,175 308,172 Q316,162 313,148" fill="none" stroke="#FF8C4A" stroke-width="0.5" opacity="0.5"/>
+            <!-- Smoke wisps -->
+            <path d="M180,300 Q170,270 185,240 Q195,230 190,215" fill="none" stroke="#3A0808" stroke-width="2" opacity="0.4"/>
+            <path d="M320,290 Q330,255 315,230 Q305,218 310,200" fill="none" stroke="#3A0808" stroke-width="2" opacity="0.4"/>
+            <!-- Stars/darkness -->
+            <circle cx="80" cy="60" r="1.5" fill="#C9A84C" opacity="0.4"/>
+            <circle cx="420" cy="80" r="1" fill="#C9A84C" opacity="0.3"/>
+            <circle cx="150" cy="40" r="1" fill="white" opacity="0.2"/>
+            <circle cx="380" cy="120" r="1.5" fill="white" opacity="0.2"/>
+            <!-- Decorative Arabic-geometric border -->
+            <rect x="10" y="10" width="480" height="380" fill="none" stroke="#5A1A1A" stroke-width="0.5" opacity="0.4"/>
+            <rect x="16" y="16" width="468" height="368" fill="none" stroke="#5A1A1A" stroke-width="0.3" opacity="0.25"/>
+          </svg>
+          <div class="visual-caption">THE DECEIVER — Al-Masīḥ ad-Dajjāl</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-block reveal">
+      <div class="story-text">
+        <h2>Imprisonment & Release</h2>
+        <p>Islamic tradition holds that the Dajjal is currently bound on an island, chained, awaiting his appointed time. He is visited by Tamim ad-Dari, a companion of the Prophet ﷺ, who described encountering a giant creature in chains on a mysterious island who asked about the state of the world and whether the final Prophet had come.</p>
+        <p>In the Book of Revelation, a parallel binding is described — Satan is chained for a thousand years before being released "for a little while." The convergence of these traditions suggests a shared eschatological memory: the great deceiver is not destroyed but contained, patiently waiting for his hour.</p>
+        <blockquote>"He is chained on an island... his left eye is blind, his right eye protrudes like a floating grape." — Hadith, Sahih Muslim 2942</blockquote>
+        <p>Christian theologians throughout history have debated the identity of the Antichrist — Nero, the Pope, Napoleon, various modern leaders — reflecting the deep anxiety this figure generates in each age.</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-frame">
+          <svg class="svg-art" viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sea-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0A1520"/>
+                <stop offset="100%" stop-color="#050A10"/>
+              </linearGradient>
+            </defs>
+            <rect width="500" height="360" fill="url(#sea-grad)"/>
+            <!-- Dark sea -->
+            <path d="M0,240 Q125,225 250,235 Q375,245 500,230 L500,360 L0,360 Z" fill="#060D15" opacity="0.9"/>
+            <path d="M0,255 Q125,240 250,250 Q375,260 500,245" fill="none" stroke="#0D1E2C" stroke-width="1.5"/>
+            <!-- Island -->
+            <ellipse cx="250" cy="232" rx="130" ry="22" fill="#1A1208"/>
+            <path d="M145,232 Q180,215 250,212 Q320,215 355,232" fill="#1A1208"/>
+            <!-- Chained figure -->
+            <rect x="225" y="170" width="50" height="60" rx="5" fill="#1A0808" opacity="0.9"/>
+            <ellipse cx="250" cy="162" rx="22" ry="26" fill="#2A0808"/>
+            <!-- Chains on wrists -->
+            <path d="M225,195 Q210,195 195,205 Q185,215 180,230 Q175,240 170,235" fill="none" stroke="#5A4A2A" stroke-width="2.5"/>
+            <path d="M275,195 Q290,195 305,205 Q315,215 320,230 Q325,240 330,235" fill="none" stroke="#5A4A2A" stroke-width="2.5"/>
+            <!-- Chain links texture -->
+            <circle cx="212" cy="200" r="3" fill="none" stroke="#6A5A3A" stroke-width="1.5"/>
+            <circle cx="205" cy="207" r="3" fill="none" stroke="#6A5A3A" stroke-width="1.5"/>
+            <circle cx="197" cy="214" r="3" fill="none" stroke="#6A5A3A" stroke-width="1.5"/>
+            <circle cx="288" cy="200" r="3" fill="none" stroke="#6A5A3A" stroke-width="1.5"/>
+            <circle cx="295" cy="207" r="3" fill="none" stroke="#6A5A3A" stroke-width="1.5"/>
+            <circle cx="303" cy="214" r="3" fill="none" stroke="#6A5A3A" stroke-width="1.5"/>
+            <!-- Glowing eye -->
+            <circle cx="257" cy="158" r="5" fill="#D43B3B" opacity="0.8"/>
+            <circle cx="257" cy="158" r="8" fill="none" stroke="#D43B3B" stroke-width="0.5" opacity="0.4"/>
+            <!-- Dark storm sky -->
+            <path d="M0,80 Q100,60 200,90 Q300,120 400,80 Q450,60 500,85" fill="none" stroke="#2A1A1A" stroke-width="1" opacity="0.5"/>
+            <path d="M50,50 Q150,35 250,60 Q350,85 450,50" fill="none" stroke="#2A1A1A" stroke-width="0.8" opacity="0.3"/>
+            <!-- Moon obscured by clouds -->
+            <circle cx="380" cy="70" r="25" fill="#1A0505" opacity="0.7"/>
+            <circle cx="380" cy="70" r="23" fill="none" stroke="#5A1A1A" stroke-width="0.5" opacity="0.3"/>
+            <!-- Dripping red text at top -->
+            <text x="250" y="35" text-anchor="middle" font-family="'Cinzel',serif" font-size="11" fill="#8B1A1A" letter-spacing="4" opacity="0.7">BOUND · WAITING · WATCHING</text>
+            <rect x="30" y="10" width="440" height="340" fill="none" stroke="#3A0808" stroke-width="0.5" opacity="0.3"/>
+          </svg>
+          <div class="visual-caption">THE CHAINED ONE — Island of Imprisonment</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Events -->
+    <div class="divider reveal">
+      <div class="divider-line"></div>
+      <span class="divider-icon">👁</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <h2 class="events-title reveal">20+ Prophetic Events of Dajjal</h2>
+
+    <div class="events-grid reveal">
+      <!-- Event 1 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <circle cx="170" cy="90" r="60" fill="#1A0808" stroke="#D43B3B" stroke-width="1" opacity="0.7"/>
+            <ellipse cx="170" cy="90" rx="45" ry="28" fill="none" stroke="#D43B3B" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="170" cy="90" r="18" fill="#D43B3B" opacity="0.3"/>
+            <line x1="148" y1="72" x2="192" y2="108" stroke="#D43B3B" stroke-width="2.5" opacity="0.8"/>
+            <line x1="192" y1="72" x2="148" y2="108" stroke="#D43B3B" stroke-width="2.5" opacity="0.8"/>
+            <text x="170" y="150" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">THE BLIND EYE</text>
+          </svg>
+        </div>
+        <div class="event-num">01</div>
+        <div class="event-body">
+          <div class="event-label">Physical Sign</div>
+          <div class="event-title">The Mark of the Blind Eye</div>
+          <div class="event-desc">Dajjal's left eye is described as blind and disfigured, protruding like a floating grape. This physical deformity serves as a divine sign for believers to identify him, no matter how great his miracles appear.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0505"/>
+            <text x="170" y="70" text-anchor="middle" font-family="serif" font-size="50" fill="#1A0505">كافر</text>
+            <text x="170" y="100" text-anchor="middle" font-family="serif" font-size="28" fill="#D43B3B" opacity="0.7">كافر</text>
+            <rect x="95" y="45" width="150" height="65" fill="none" stroke="#8B1A1A" stroke-width="1" opacity="0.5"/>
+            <text x="170" y="150" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">KAFIR WRITTEN ON FOREHEAD</text>
+          </svg>
+        </div>
+        <div class="event-num">02</div>
+        <div class="event-body">
+          <div class="event-label">Divine Mark</div>
+          <div class="event-title">The Word "Kafir" on His Forehead</div>
+          <div class="event-desc">The word كافر (Kafir / Disbeliever) will be written between the eyes of Dajjal, visible to every believing Muslim — even the unlettered — as divine guidance to protect the faithful from deception.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <path d="M0,130 Q85,110 170,120 Q255,130 340,110 L340,180 L0,180 Z" fill="#1A0505"/>
+            <circle cx="170" cy="70" r="40" fill="#2A0A00" stroke="#FF6B2B" stroke-width="1.5" opacity="0.8"/>
+            <path d="M150,70 Q160,45 170,55 Q175,40 180,50 Q188,35 195,55 Q200,45 205,60 Q200,70 195,65 Q188,75 182,62 Q176,72 170,65 Q165,75 158,65 Q155,73 150,70 Z" fill="#FF6B2B" opacity="0.9"/>
+            <path d="M155,75 Q165,50 175,60 Q178,44 183,55" fill="none" stroke="#FFA050" stroke-width="0.5" opacity="0.5"/>
+            <text x="170" y="155" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">RIVER OF FIRE</text>
+          </svg>
+        </div>
+        <div class="event-num">03</div>
+        <div class="event-body">
+          <div class="event-label">Great Deception</div>
+          <div class="event-title">Rivers of Fire and Water</div>
+          <div class="event-desc">Dajjal will carry two rivers: one appearing as cool water, the other as fire. In reality, they are reversed — the Prophet ﷺ warned believers to drink from what appears as fire, for it is truly water, and avoid what seems to be water.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 4 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <ellipse cx="170" cy="100" rx="120" ry="50" fill="#1A0808" opacity="0.8"/>
+            <!-- mountain -->
+            <path d="M80,140 L170,60 L260,140 Z" fill="#2A0808" stroke="#5A1A1A" stroke-width="1"/>
+            <!-- treasure flowing down -->
+            <path d="M170,60 Q165,90 160,120 Q170,115 180,120 Q175,90 170,60 Z" fill="#C9A84C" opacity="0.6"/>
+            <circle cx="158" cy="125" r="4" fill="#C9A84C" opacity="0.7"/>
+            <circle cx="182" cy="123" r="3" fill="#C9A84C" opacity="0.6"/>
+            <circle cx="165" cy="132" r="3.5" fill="#C9A84C" opacity="0.5"/>
+            <text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">COMMAND OVER TREASURES</text>
+          </svg>
+        </div>
+        <div class="event-num">04</div>
+        <div class="event-body">
+          <div class="event-label">Supernatural Power</div>
+          <div class="event-title">Earth Reveals Its Treasures</div>
+          <div class="event-desc">The Prophet ﷺ foretold that when Dajjal commands the earth's treasures to follow him, they will — like a swarm of bees follows its queen. Mountains will spill their riches before him as a sign of his false majesty.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 5 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0305"/>
+            <!-- Two people facing -->
+            <rect x="80" y="80" width="30" height="60" rx="5" fill="#2A0808"/>
+            <circle cx="95" cy="70" r="18" fill="#2A0808"/>
+            <rect x="220" y="80" width="30" height="60" rx="5" fill="#1A1A0A"/>
+            <circle cx="235" cy="70" r="18" fill="#1A1A0A"/>
+            <!-- Divide lightning -->
+            <path d="M170,20 L155,70 L168,70 L150,140 L175,80 L162,80 Z" fill="#D43B3B" opacity="0.8"/>
+            <!-- One alive one falling -->
+            <path d="M220,140 Q230,150 240,160 Q250,170 260,160" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.6"/>
+            <text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">KILLING AND REVIVING</text>
+          </svg>
+        </div>
+        <div class="event-num">05</div>
+        <div class="event-body">
+          <div class="event-label">False Miracle</div>
+          <div class="event-title">The Act of Killing and Reviving</div>
+          <div class="event-desc">Dajjal will slay a young man and then apparently restore him to life, as his greatest proof of divinity. This theatrical miracle will be his most convincing deception — yet the Prophet ﷺ said after this act, Dajjal shall have no power over him again.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 6 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <circle cx="170" cy="90" r="65" fill="#0A0808" stroke="#D43B3B" stroke-width="0.5" opacity="0.4"/>
+            <!-- World map silhouette rough -->
+            <path d="M105,90 Q115,70 130,75 Q145,65 160,75 Q170,68 185,72 Q200,65 215,75 Q225,70 235,85 Q238,95 230,105 Q220,115 200,110 Q185,115 170,108 Q155,115 140,110 Q125,115 110,105 Q100,98 105,90 Z" fill="#1A0808" stroke="#5A1A1A" stroke-width="1"/>
+            <!-- Dajjal tiny at center -->
+            <circle cx="170" cy="88" r="6" fill="#D43B3B" opacity="0.8"/>
+            <!-- Fast travel lines -->
+            <path d="M170,88 Q130,60 90,55" fill="none" stroke="#D43B3B" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+            <path d="M170,88 Q210,60 250,55" fill="none" stroke="#D43B3B" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+            <path d="M170,88 Q140,115 100,125" fill="none" stroke="#D43B3B" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+            <text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">40 DAYS TRAVERSING THE EARTH</text>
+          </svg>
+        </div>
+        <div class="event-num">06</div>
+        <div class="event-body">
+          <div class="event-label">The Great Trial</div>
+          <div class="event-title">40 Days to Traverse the Earth</div>
+          <div class="event-desc">Dajjal's reign will last 40 days — but one day like a year, one day like a month, one day like a week, and the remaining days as normal days. He will traverse the whole earth like a cloud driven by wind, entering every city except Mecca and Medina.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 7 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0510"/>
+            <!-- Ka'ba simplified -->
+            <rect x="130" y="70" width="80" height="80" fill="#0D0810" stroke="#C9A84C" stroke-width="1.5"/>
+            <rect x="145" y="110" width="50" height="40" fill="#0A0608" stroke="#C9A84C" stroke-width="1"/>
+            <!-- Angels guard -->
+            <path d="M110,80 Q95,70 80,80 Q75,90 85,95 Q95,85 110,90 Z" fill="#C9A84C" opacity="0.5"/>
+            <path d="M230,80 Q245,70 260,80 Q265,90 255,95 Q245,85 230,90 Z" fill="#C9A84C" opacity="0.5"/>
+            <!-- Barrier glow -->
+            <ellipse cx="170" cy="130" rx="110" ry="70" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3" stroke-dasharray="5,3"/>
+            <text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">FORBIDDEN FROM MECCA &amp; MEDINA</text>
+          </svg>
+        </div>
+        <div class="event-num">07</div>
+        <div class="event-body">
+          <div class="event-label">Divine Protection</div>
+          <div class="event-title">Barred from the Two Holy Cities</div>
+          <div class="event-desc">Despite his immense power, Dajjal will be unable to enter Mecca or Medina. Angels will stand guard at every entrance. The earth itself will tremble with earthquakes at his approach, and he will be forced to camp at their outskirts.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 8 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <path d="M0,150 Q85,120 170,135 Q255,150 340,120 L340,180 L0,180 Z" fill="#0A0305"/>
+            <!-- Donkey figure -->
+            <ellipse cx="170" cy="110" rx="60" ry="28" fill="#2A1A10"/>
+            <rect x="130" y="100" width="12" height="35" rx="3" fill="#2A1A10"/>
+            <rect x="155" y="100" width="12" height="35" rx="3" fill="#2A1A10"/>
+            <rect x="178" y="100" width="12" height="35" rx="3" fill="#2A1A10"/>
+            <rect x="200" y="100" width="12" height="35" rx="3" fill="#2A1A10"/>
+            <circle cx="230" cy="105" r="18" fill="#2A1A10"/>
+            <!-- Dajjal on top -->
+            <circle cx="190" cy="72" r="14" fill="#1A0808"/>
+            <rect x="180" y="82" width="20" height="28" rx="3" fill="#1A0808"/>
+            <!-- Glowing eye -->
+            <circle cx="195" cy="68" r="4" fill="#D43B3B" opacity="0.9"/>
+            <text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">RIDES A GIANT DONKEY</text>
+          </svg>
+        </div>
+        <div class="event-num">08</div>
+        <div class="event-body">
+          <div class="event-label">Physical Appearance</div>
+          <div class="event-title">Rides an Enormous Donkey</div>
+          <div class="event-desc">Dajjal will ride a massive donkey whose ears alone are said to span a great distance. He travels upon this beast at tremendous speed across the lands, with his followers — primarily from Isfahan in Persian tradition — marching behind him.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag jewish">✡ Judaism</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 9 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#050A0D"/>
+            <!-- Mountains of Damascus -->
+            <path d="M0,160 L60,100 L120,130 L180,80 L240,120 L300,85 L340,110 L340,180 L0,180 Z" fill="#0A1020"/>
+            <path d="M60,100 L120,130 L180,80 L240,120 L300,85" fill="none" stroke="#1A2A3A" stroke-width="1"/>
+            <!-- White minaret with glowing top -->
+            <rect x="158" y="20" width="24" height="80" fill="#E8DCC8" opacity="0.15"/>
+            <path d="M155,20 L170,5 L185,20 Z" fill="#E8DCC8" opacity="0.2"/>
+            <circle cx="170" cy="10" r="5" fill="#C9A84C" opacity="0.6"/>
+            <!-- Light beam -->
+            <path d="M170,5 L100,180 L240,180 Z" fill="#C9A84C" opacity="0.03"/>
+            <!-- Jesus descending figure -->
+            <circle cx="170" cy="35" r="10" fill="#E8DCC8" opacity="0.25"/>
+            <path d="M164,42 Q167,60 165,80" fill="none" stroke="#E8DCC8" stroke-width="1.5" opacity="0.3"/>
+            <path d="M155,55 Q165,50 175,55" fill="none" stroke="#E8DCC8" stroke-width="1.5" opacity="0.3"/>
+            <text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#3A5A8B" letter-spacing="2">DESCENT OF ISA — THE END</text>
+          </svg>
+        </div>
+        <div class="event-num">09</div>
+        <div class="event-body">
+          <div class="event-label">The Final Battle</div>
+          <div class="event-title">Isa (Jesus) Descends to Defeat Him</div>
+          <div class="event-desc">The reign of Dajjal ends when Isa ibn Maryam descends upon the white minaret east of Damascus. At the sight of Jesus, Dajjal begins to melt like salt in water. He flees but is caught at the Gate of Ludd, where Isa slays him with a spear.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+            <span class="etag jewish">✡ Judaism</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 10 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <!-- Number 70,000 -->
+            <text x="170" y="85" text-anchor="middle" font-family="'Cinzel Decorative',serif" font-size="42" fill="#D43B3B" opacity="0.25">70,000</text>
+            <!-- Crowd silhouettes -->
+            <circle cx="80" cy="140" r="8" fill="#2A0808"/>
+            <rect x="74" y="143" width="12" height="22" rx="3" fill="#2A0808"/>
+            <circle cx="105" cy="138" r="7" fill="#2A0808"/>
+            <rect x="100" y="141" width="10" height="20" rx="3" fill="#2A0808"/>
+            <circle cx="130" cy="142" r="8" fill="#2A0808"/>
+            <rect x="124" y="145" width="12" height="20" rx="3" fill="#2A0808"/>
+            <circle cx="155" cy="137" r="8" fill="#2A0808"/>
+            <circle cx="180" cy="140" r="7" fill="#2A0808"/>
+            <circle cx="205" cy="138" r="8" fill="#2A0808"/>
+            <circle cx="228" cy="141" r="7" fill="#2A0808"/>
+            <circle cx="252" cy="138" r="8" fill="#2A0808"/>
+            <text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">70,000 FROM ISFAHAN</text>
+          </svg>
+        </div>
+        <div class="event-num">10</div>
+        <div class="event-body">
+          <div class="event-label">His Army</div>
+          <div class="event-title">70,000 Jews of Isfahan Follow Him</div>
+          <div class="event-desc">A hadith states that 70,000 Jews from Isfahan wearing Persian green robes will form the core of Dajjal's army. This prophecy has generated extensive theological discussion across Islamic scholarship regarding its interpretation and meaning.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 11 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0810"/>
+            <path d="M0,150 Q170,100 340,140 L340,180 L0,180 Z" fill="#0D0D15" opacity="0.8"/>
+            <!-- Sky turns dark -->
+            <path d="M0,0 Q170,40 340,0 L340,100 Q170,140 0,100 Z" fill="#1A0A0A" opacity="0.6"/>
+            <!-- Sun being blotted out -->
+            <circle cx="170" cy="60" r="35" fill="#3A1A00" opacity="0.7"/>
+            <circle cx="170" cy="60" r="25" fill="#5A2A00" opacity="0.5"/>
+            <!-- Eclipse / blocking -->
+            <circle cx="178" cy="54" r="30" fill="#0A0810" opacity="0.9"/>
+            <!-- Blood red ring -->
+            <circle cx="170" cy="60" r="36" fill="none" stroke="#D43B3B" stroke-width="1.5" opacity="0.5"/>
+            <text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">SKIES DARKEN IN HIS PRESENCE</text>
+          </svg>
+        </div>
+        <div class="event-num">11</div>
+        <div class="event-body">
+          <div class="event-label">Sign of the Times</div>
+          <div class="event-title">Signs in the Heavens</div>
+          <div class="event-desc">Prior to Dajjal's emergence, the world will witness portentous signs: three consecutive years of drought before his appearance — each year withholding a third more rain than normal. Celestial disruptions mirror the spiritual darkness his arrival brings.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 12 -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <!-- Cave -->
+            <path d="M100,50 Q170,30 240,50 L250,160 L90,160 Z" fill="#1A0808"/>
+            <ellipse cx="170" cy="52" rx="70" ry="20" fill="#0D0305"/>
+            <!-- Man reading inside cave -->
+            <circle cx="170" cy="100" r="12" fill="#2A1A0A"/>
+            <rect x="163" y="108" width="14" height="22" rx="3" fill="#2A1A0A"/>
+            <!-- Quran / book in hand -->
+            <rect x="175" y="112" width="16" height="12" rx="1" fill="#C9A84C" opacity="0.7"/>
+            <!-- Light from surah -->
+            <path d="M191,118 Q230,110 270,120" fill="none" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.5"/>
+            <text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">CAVE OF AL-KAHF — PROTECTION</text>
+          </svg>
+        </div>
+        <div class="event-num">12</div>
+        <div class="event-body">
+          <div class="event-label">Divine Protection</div>
+          <div class="event-title">Surah Al-Kahf as a Shield</div>
+          <div class="event-desc">The Prophet ﷺ declared that reciting the first ten or last ten verses of Surah Al-Kahf (The Cave) will protect a believer from the Dajjal's trial. This chapter mirrors the test of faith — riches, knowledge, ancestry, and religion — that Dajjal embodies.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events 13–21 compact -->
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0305"/>
+            <path d="M60,140 Q170,80 280,140 L280,160 L60,160 Z" fill="#1A0808" opacity="0.7"/>
+            <path d="M170,20 L120,140 L170,120 L220,140 Z" fill="#D43B3B" opacity="0.2"/>
+            <line x1="170" y1="20" x2="170" y2="140" stroke="#D43B3B" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.6"/>
+            <text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">DISPERSAL TO ALL NATIONS</text>
+          </svg>
+        </div>
+        <div class="event-num">13</div>
+        <div class="event-body">
+          <div class="event-label">The Spread</div>
+          <div class="event-title">He Shall Spread Fitna Worldwide</div>
+          <div class="event-desc">No prophet was sent except that he warned his people of Dajjal. From Noah to Muhammad ﷺ, every nation received the warning. His coming is the greatest tribulation humanity has ever faced — greater than the flood, the plagues, any earthly catastrophe.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+            <span class="etag jewish">✡ Judaism</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <!-- Rain / drought -->
+            <path d="M60,80 Q120,60 180,75 Q240,60 300,80 L300,40 Q240,20 180,35 Q120,20 60,40 Z" fill="#2A0A0A" opacity="0.8"/>
+            <!-- Cracked earth -->
+            <path d="M30,160 Q90,150 150,155 Q200,160 260,150 Q300,145 340,155" fill="none" stroke="#3A1A1A" stroke-width="1" opacity="0.5"/>
+            <path d="M80,165 Q100,145 130,158" fill="none" stroke="#3A1A1A" stroke-width="0.8" opacity="0.4"/>
+            <path d="M200,168 Q230,148 260,162" fill="none" stroke="#3A1A1A" stroke-width="0.8" opacity="0.4"/>
+            <!-- Dead tree -->
+            <line x1="170" y1="165" x2="170" y2="100" stroke="#3A2A1A" stroke-width="3"/>
+            <line x1="170" y1="130" x2="145" y2="110" stroke="#3A2A1A" stroke-width="2"/>
+            <line x1="170" y1="120" x2="195" y2="103" stroke="#3A2A1A" stroke-width="2"/>
+            <text x="170" y="175" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">THREE YEARS OF DROUGHT</text>
+          </svg>
+        </div>
+        <div class="event-num">14</div>
+        <div class="event-body">
+          <div class="event-label">Precursor Signs</div>
+          <div class="event-title">Three Years of Drought Before His Emergence</div>
+          <div class="event-desc">Three years before Dajjal appears, the sky withholds one-third of its rain the first year, two-thirds the second year, and all rain the third year. Yet animals and plants survive by the will of Allah — a test of faith in dependence on the Divine.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0610"/>
+            <!-- Antichrist symbol - Bible tradition -->
+            <text x="170" y="95" text-anchor="middle" font-family="serif" font-size="60" fill="#8B1A1A" opacity="0.2">666</text>
+            <rect x="70" y="40" width="200" height="120" rx="3" fill="none" stroke="#5A1A1A" stroke-width="1" opacity="0.4"/>
+            <path d="M110,80 L150,80 L170,50 L190,80 L230,80 L200,100 L210,130 L170,110 L130,130 L140,100 Z" fill="none" stroke="#D43B3B" stroke-width="0.8" opacity="0.3"/>
+            <text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">NUMBER OF THE BEAST — 666</text>
+          </svg>
+        </div>
+        <div class="event-num">15</div>
+        <div class="event-body">
+          <div class="event-label">Christian Parallel</div>
+          <div class="event-title">The Antichrist — Beast of Revelation</div>
+          <div class="event-desc">In the Book of Revelation, the Antichrist (Beast) rises from the sea with seven heads and ten horns, bearing the number 666. This figure of ultimate evil demands worship, controls commerce, and persecutes believers — a clear parallel to the Islamic Dajjal.</div>
+          <div class="event-traditions">
+            <span class="etag christian">✝ Christian</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <!-- Shield and sword -->
+            <path d="M170,30 Q200,40 210,80 Q200,120 170,140 Q140,120 130,80 Q140,40 170,30 Z" fill="#2A0808" stroke="#D43B3B" stroke-width="1.2" opacity="0.7"/>
+            <line x1="170" y1="40" x2="170" y2="135" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+            <line x1="150" y1="75" x2="190" y2="75" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
+            <!-- Cross inside shield? star of david? -->
+            <text x="170" y="92" text-anchor="middle" font-size="24" fill="#D43B3B" opacity="0.5">✦</text>
+            <text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">ARMILUS — JEWISH PARALLEL</text>
+          </svg>
+        </div>
+        <div class="event-num">16</div>
+        <div class="event-body">
+          <div class="event-label">Jewish Parallel</div>
+          <div class="event-title">Armilus — The Jewish False Messiah</div>
+          <div class="event-desc">Jewish midrashic tradition describes Armilus, a false king born of a stone idol who becomes an agent of evil in the end times. He defeats Messiah ben Joseph and takes control of Jerusalem before being slain by Messiah ben David — parallel to Dajjal's fate at the hands of Isa.</div>
+          <div class="event-traditions">
+            <span class="etag jewish">✡ Judaism</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0305"/>
+            <!-- Mountain of gold illusion -->
+            <path d="M100,150 L170,50 L240,150 Z" fill="#3A2A00" opacity="0.7"/>
+            <path d="M80,150 L160,60 L250,150 Z" fill="#2A1A00" opacity="0.4"/>
+            <!-- Shimmer lines on gold mountain -->
+            <line x1="130" y1="110" x2="145" y2="90" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
+            <line x1="150" y1="130" x2="162" y2="95" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+            <line x1="175" y1="125" x2="183" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+            <!-- Mirage lines -->
+            <path d="M60,145 Q170,135 280,148" fill="none" stroke="#D43B3B" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+            <text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">MOUNTAIN OF GOLD ILLUSION</text>
+          </svg>
+        </div>
+        <div class="event-num">17</div>
+        <div class="event-body">
+          <div class="event-label">False Miracle</div>
+          <div class="event-title">The Mountain of Gold</div>
+          <div class="event-desc">The Prophet ﷺ warned that a mountain of gold will be revealed before Dajjal's emergence, drawing people toward greed and desire. This test of material attachment weakens spiritual defense before the Deceiver arrives.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <!-- Desert -->
+            <path d="M0,140 Q85,120 170,130 Q255,140 340,115 L340,180 L0,180 Z" fill="#1A0A05"/>
+            <!-- Tamim ad-Dari on a boat -->
+            <path d="M120,120 Q170,108 220,118 Q215,130 170,132 Q125,130 120,120 Z" fill="#2A1A10"/>
+            <rect x="155" y="100" width="30" height="25" rx="3" fill="#2A1510"/>
+            <!-- Mast and sail -->
+            <line x1="170" y1="80" x2="170" y2="100" stroke="#5A3A20" stroke-width="2"/>
+            <!-- Waves -->
+            <path d="M80,125 Q100,118 120,125 Q140,132 160,125" fill="none" stroke="#1A2A3A" stroke-width="1" opacity="0.5"/>
+            <text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">TAMIM AD-DARI MEETS DAJJAL</text>
+          </svg>
+        </div>
+        <div class="event-num">18</div>
+        <div class="event-body">
+          <div class="event-label">Historical Encounter</div>
+          <div class="event-title">Tamim ad-Dari's Encounter</div>
+          <div class="event-desc">Tamim ad-Dari, a companion who converted from Christianity, reported meeting a chained giant on a remote island who asked about the Prophet ﷺ. The Prophet confirmed this story publicly from the pulpit — the only time he did so about a future event.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0810"/>
+            <!-- Medina mosque outline -->
+            <rect x="100" y="80" width="140" height="80" fill="#0D1018" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+            <rect x="115" y="60" width="15" height="25" fill="#0D1018" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+            <rect x="145" y="50" width="50" height="35" fill="#0D1018" stroke="#C9A84C" stroke-width="0.8" opacity="0.6"/>
+            <rect x="210" y="60" width="15" height="25" fill="#0D1018" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+            <!-- Light rays protecting Medina -->
+            <circle cx="170" cy="95" r="80" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
+            <circle cx="170" cy="95" r="100" fill="none" stroke="#C9A84C" stroke-width="0.3" opacity="0.1"/>
+            <!-- Earthquake cracks outside -->
+            <path d="M40,150 Q50,140 60,150 Q70,160 80,148" fill="none" stroke="#D43B3B" stroke-width="1" opacity="0.4"/>
+            <text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">MEDINA TREMBLES AT HIS APPROACH</text>
+          </svg>
+        </div>
+        <div class="event-num">19</div>
+        <div class="event-body">
+          <div class="event-label">The Protected City</div>
+          <div class="event-title">Medina Shakes as He Approaches</div>
+          <div class="event-desc">When Dajjal approaches Medina, the city will shake three times, expelling every hypocrite and disbeliever from within it. This divine purification serves to protect the sacred city from contamination, while cementing the pure community within.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0D0305"/>
+            <!-- Gate of Ludd/Lod -->
+            <path d="M130,160 L130,60 Q170,40 210,60 L210,160 Z" fill="#1A0808" stroke="#8B1A1A" stroke-width="1.5" opacity="0.6"/>
+            <path d="M150,160 L150,75 L190,75 L190,160" fill="#0D0305"/>
+            <!-- Spear -->
+            <line x1="260" y1="20" x2="140" y2="150" stroke="#C9A84C" stroke-width="2"/>
+            <path d="M255,15 L270,30 L258,28 Z" fill="#C9A84C"/>
+            <!-- Body falling -->
+            <circle cx="148" cy="148" r="10" fill="#2A0808" opacity="0.6"/>
+            <path d="M142,155 Q155,165 168,160" fill="none" stroke="#2A0808" stroke-width="2" opacity="0.6"/>
+            <text x="170" y="175" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">SLAIN AT THE GATE OF LUDD</text>
+          </svg>
+        </div>
+        <div class="event-num">20</div>
+        <div class="event-body">
+          <div class="event-label">The Final Defeat</div>
+          <div class="event-title">Slain at the Gate of Ludd</div>
+          <div class="event-desc">After Isa descends and leads the believers in prayer, Dajjal is hunted down and cornered at the Gate of Ludd (modern Lod, Israel). Isa plunges his spear into him and shows the people his blood — the ultimate end of the greatest deception in human history.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-card-art">
+          <svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="180" fill="#0A0305"/>
+            <!-- Dajjal melting -->
+            <path d="M160,40 Q190,35 200,60 Q205,80 195,100 Q185,120 170,130 Q155,120 145,100 Q135,80 140,60 Q150,35 160,40 Z" fill="#2A0808" opacity="0.7"/>
+            <!-- Melting drips -->
+            <path d="M155,130 Q152,145 148,160" stroke="#D43B3B" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <path d="M170,130 Q170,148 169,162" stroke="#D43B3B" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <path d="M185,128 Q188,143 192,158" stroke="#D43B3B" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <!-- Salt dissolving in water -->
+            <ellipse cx="170" cy="158" rx="40" ry="10" fill="#1A0A0A" opacity="0.5"/>
+            <text x="170" y="177" text-anchor="middle" font-family="serif" font-size="9" fill="#8B1A1A" letter-spacing="2">MELTS LIKE SALT AT ISA'S SIGHT</text>
+          </svg>
+        </div>
+        <div class="event-num">21</div>
+        <div class="event-body">
+          <div class="event-label">The Dissolution</div>
+          <div class="event-title">Melts at the Sight of Jesus / Isa</div>
+          <div class="event-desc">The moment Isa lays eyes on Dajjal, the Deceiver begins to dissolve "like salt melts in water." His physical form — built on lies and illusions — cannot withstand the presence of divine truth. The greatest fitna in history ends in an instant of divine light.</div>
+          <div class="event-traditions">
+            <span class="etag islam">☽ Islam</span>
+            <span class="etag christian">✝ Christian</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripture Quotes -->
+    <div class="quotes-section reveal">
+      <div class="quotes-title">☽ SACRED REFERENCES ✝</div>
+      <div class="quotes-grid">
+        <div class="quote-card">
+          <div class="quote-text">He is blind in his right eye. His eye resembles a bulging grape. On his forehead is written the letters K-F-R — visible to every believer, literate or not.</div>
+          <div class="quote-source">Sahih Bukhari & Muslim — Hadith on Dajjal</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-text">Let no prophet go without having warned his nation against the one-eyed liar. Verily, he is one-eyed and your Lord is not one-eyed.</div>
+          <div class="quote-source">Sahih Bukhari 3338 — Prophet Muhammad ﷺ</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-text">The coming of the lawless one will be accompanied by all kinds of false miracles, signs and wonders, and by every sort of evil that deceives those who are perishing.</div>
+          <div class="quote-source">2 Thessalonians 2:9–10 — New Testament</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-text">He also forced everyone, small and great, rich and poor, free and slave, to receive a mark on his right hand or on his forehead, so that no one could buy or sell.</div>
+          <div class="quote-source">Revelation 13:16–17 — Book of Revelation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ ISHA SECTION -->
+<div id="isha-section" class="section-wrap" data-theme="isha">
+  <div class="char-header">
+    <div class="char-header-bg" style="background:linear-gradient(135deg,#000A1A 0%,#081A3A 40%,#000510 100%);">
+      <svg viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.4">
+        <defs>
+          <radialGradient id="isha-glow" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#4A8BDB" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1400" height="500" fill="url(#isha-glow)"/>
+        <!-- Cross -->
+        <line x1="700" y1="80" x2="700" y2="420" stroke="#4A8BDB" stroke-width="1.5" opacity="0.3"/>
+        <line x1="540" y1="200" x2="860" y2="200" stroke="#4A8BDB" stroke-width="1.5" opacity="0.3"/>
+        <!-- Rays of light -->
+        <line x1="700" y1="250" x2="300" y2="100" stroke="#E8C97A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="700" y1="250" x2="1100" y2="100" stroke="#E8C97A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="700" y1="250" x2="200" y2="280" stroke="#E8C97A" stroke-width="0.5" opacity="0.15"/>
+        <line x1="700" y1="250" x2="1200" y2="280" stroke="#E8C97A" stroke-width="0.5" opacity="0.15"/>
+        <!-- Star of Bethlehem -->
+        <circle cx="700" cy="80" r="15" fill="#C9A84C" opacity="0.5"/>
+        <circle cx="700" cy="80" r="8" fill="#E8C97A" opacity="0.8"/>
+        <!-- Dove silhouette -->
+        <path d="M650,200 Q670,185 700,190 Q730,185 750,200 Q740,210 720,205 Q700,215 680,205 Q660,210 650,200 Z" fill="#E8DCC8" opacity="0.15"/>
+        <path d="M700,190 Q710,175 700,165 Q690,175 700,190 Z" fill="#E8DCC8" opacity="0.15"/>
+        <!-- Water/waves at bottom -->
+        <path d="M0,420 Q350,400 700,415 Q1050,430 1400,410 L1400,500 L0,500 Z" fill="#0A1A2A" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="char-header-overlay"></div>
+    <div class="char-header-overlay2"></div>
+    <div class="char-header-content">
+      <div class="char-badge">Prophet of Allah · عيسى ابن مريم</div>
+      <h1 class="char-name">Isha / Jesus</h1>
+      <p class="char-epithet">"Born of a Virgin, Raised the Dead, and Shall Return at the End of Times"</p>
+      <div class="char-traditions">
+        <span class="tradition-tag">☽ Islam — Isa ibn Maryam, Prophet</span>
+        <span class="tradition-tag">✝ Christianity — Son of God, Messiah</span>
+        <span class="tradition-tag">✡ Judaism — Rabbi Yeshua (debated)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div class="story-block reveal">
+      <div class="story-text">
+        <h2>The Birth of a Miracle</h2>
+        <p>In all three Abrahamic traditions, the figure of Jesus — Isa in Arabic, Yeshua in Hebrew — occupies a unique and contested space. For Muslims, he is one of the greatest prophets, born miraculously of the Virgin Maryam, given the miracle of speech as an infant and the ability to heal the blind and lepers. For Christians, he is the Son of God incarnate, the second person of the Trinity, whose death and resurrection opened the path of salvation.</p>
+        <p>In Judaism, the historical Yeshua is acknowledged but not recognized as Messiah; his story is viewed through a different lens — a Jewish rabbi whose movement evolved into a separate religion. Yet even in Jewish mystical texts, there are references to a "anointed one" whose life and sacrifice remain a theological puzzle.</p>
+        <blockquote>"O Maryam! Verily Allah gives you glad tidings of a Word from Him, whose name will be the Messiah Jesus, son of Maryam, held in honor in this world and in the Hereafter." — Quran 3:45</blockquote>
+        <p>The virgin birth, the speaking infant, the miracles — all traditions agree on the extraordinary nature of his entry into the world, though they interpret its meaning differently.</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-frame">
+          <svg class="svg-art" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="isha-bg" cx="50%" cy="30%">
+                <stop offset="0%" stop-color="#0A1528"/>
+                <stop offset="100%" stop-color="#050810"/>
+              </radialGradient>
+              <radialGradient id="halo-g" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="500" height="400" fill="url(#isha-bg)"/>
+            <!-- Starry sky -->
+            <circle cx="100" cy="50" r="1.5" fill="#C9A84C" opacity="0.7"/>
+            <circle cx="200" cy="30" r="1" fill="white" opacity="0.4"/>
+            <circle cx="350" cy="60" r="1.5" fill="white" opacity="0.3"/>
+            <circle cx="420" cy="40" r="1" fill="#C9A84C" opacity="0.5"/>
+            <circle cx="50" cy="90" r="1" fill="white" opacity="0.3"/>
+            <!-- Bethlehem star -->
+            <circle cx="250" cy="35" r="8" fill="#C9A84C" opacity="0.8"/>
+            <circle cx="250" cy="35" r="14" fill="url(#halo-g)"/>
+            <line x1="250" y1="15" x2="250" y2="55" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
+            <line x1="230" y1="35" x2="270" y2="35" stroke="#C9A84C" stroke-width="0.5" opacity="0.5"/>
+            <!-- Mary figure -->
+            <ellipse cx="250" cy="330" rx="90" ry="25" fill="#0A1020" opacity="0.5"/>
+            <path d="M210,200 Q205,260 195,330 Q230,320 250,325 Q270,320 305,330 Q295,260 290,200 Z" fill="#1A2A4A"/>
+            <!-- Blue robe -->
+            <path d="M210,200 Q205,240 198,300 Q220,295 230,295" fill="none" stroke="#2A4A7A" stroke-width="1" opacity="0.5"/>
+            <path d="M290,200 Q295,240 302,300 Q280,295 270,295" fill="none" stroke="#2A4A7A" stroke-width="1" opacity="0.5"/>
+            <!-- Veil -->
+            <path d="M195,185 Q250,165 305,185 Q295,200 250,195 Q205,200 195,185 Z" fill="#1A3055"/>
+            <!-- Face -->
+            <ellipse cx="250" cy="165" rx="30" ry="35" fill="#1A2030"/>
+            <!-- Eyes -->
+            <ellipse cx="241" cy="160" rx="5" ry="3.5" fill="#2A3A50"/>
+            <ellipse cx="259" cy="160" rx="5" ry="3.5" fill="#2A3A50"/>
+            <!-- Peaceful expression -->
+            <path d="M242,175 Q250,180 258,175" fill="none" stroke="#3A5A7A" stroke-width="1.2"/>
+            <!-- Baby Jesus in arms -->
+            <circle cx="270" cy="250" r="15" fill="#2A2A1A"/>
+            <ellipse cx="270" cy="265" rx="20" ry="12" fill="#2A2A1A"/>
+            <!-- Halo around baby -->
+            <circle cx="270" cy="250" r="20" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+            <!-- Light rays from baby -->
+            <line x1="270" y1="225" x2="270" y2="200" stroke="#C9A84C" stroke-width="0.3" opacity="0.3"/>
+            <line x1="283" y1="230" x2="295" y2="215" stroke="#C9A84C" stroke-width="0.3" opacity="0.25"/>
+            <line x1="257" y1="230" x2="245" y2="215" stroke="#C9A84C" stroke-width="0.3" opacity="0.25"/>
+            <!-- Stable/manger hint -->
+            <line x1="100" y1="380" x2="400" y2="380" stroke="#2A1A0A" stroke-width="2" opacity="0.5"/>
+            <line x1="130" y1="310" x2="130" y2="380" stroke="#2A1A0A" stroke-width="1.5" opacity="0.4"/>
+            <line x1="370" y1="310" x2="370" y2="380" stroke="#2A1A0A" stroke-width="1.5" opacity="0.4"/>
+            <path d="M80,310 L250,240 L420,310" fill="none" stroke="#2A1A0A" stroke-width="1.5" opacity="0.4"/>
+            <!-- Frame -->
+            <rect x="10" y="10" width="480" height="380" fill="none" stroke="#1A3A5A" stroke-width="0.5" opacity="0.4"/>
+          </svg>
+          <div class="visual-caption">MARYAM AND ISA — The Miracle Birth</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider reveal"><div class="divider-line"></div><span class="divider-icon">✝</span><div class="divider-line"></div></div>
+    <h2 class="events-title reveal">20+ Sacred Events of Isha / Jesus</h2>
+
+    <div class="events-grid reveal">
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><ellipse cx="170" cy="100" rx="80" ry="50" fill="#0A1525" opacity="0.8"/><path d="M100,130 Q140,80 170,90 Q200,80 240,130" fill="none" stroke="#4A8BDB" stroke-width="1" opacity="0.5"/><circle cx="170" cy="90" r="20" fill="#C9A84C" opacity="0.3"/><circle cx="170" cy="90" r="12" fill="#C9A84C" opacity="0.5"/><path d="M170,55 L162,80 L170,75 L178,80 Z" fill="#C9A84C" opacity="0.7"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">BORN OF VIRGIN MARYAM</text></svg></div><div class="event-num">01</div><div class="event-body"><div class="event-label">The Miracle Birth</div><div class="event-title">Born of the Virgin Maryam</div><div class="event-desc">Isa/Jesus was born without a human father, created by Allah's divine command "Be!" In Islam, this miraculous birth places Isa among the greatest miracles of creation. Mary (Maryam) is the only woman named in the Quran and holds the highest station among women in Islamic tradition.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M140,60 Q170,40 200,60 L205,120 L170,130 L135,120 Z" fill="#0A1525"/><circle cx="170" cy="60" r="18" fill="#1A2A3A"/><path d="M160,65 Q163,75 168,72 Q170,78 172,72 Q177,75 180,65" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.7"/><text x="155" y="95" text-anchor="middle" font-size="14" fill="#4A8BDB" opacity="0.8">إِنِّي عَبْدُ ٱللَّٰهِ</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">SPOKE FROM THE CRADLE</text></svg></div><div class="event-num">02</div><div class="event-body"><div class="event-label">Infant Miracle</div><div class="event-title">Spoke from the Cradle</div><div class="event-desc">When Maryam returned home with the newborn Isa, people accused her of immorality. The infant spoke from his cradle: "I am a servant of Allah. He has given me the Book and made me a Prophet." This miracle defended his mother's honor before all of humanity.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M0,140 Q170,110 340,130 L340,180 L0,180 Z" fill="#0A1020"/><path d="M120,140 Q170,100 220,140" fill="none" stroke="#4A8BDB" stroke-width="1.5" opacity="0.6"/><circle cx="170" cy="120" r="25" fill="#0A1A2A" opacity="0.8"/><circle cx="170" cy="125" r="8" fill="#4A8BDB" opacity="0.3"/><path d="M155,115 Q170,105 185,115 L185,125 Q170,135 155,125 Z" fill="#1A3A6A" opacity="0.5"/><path d="M150,118 L190,118" stroke="#4A8BDB" stroke-width="0.5" opacity="0.4"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">BAPTISM IN THE JORDAN RIVER</text></svg></div><div class="event-num">03</div><div class="event-body"><div class="event-label">Christian Tradition</div><div class="event-title">Baptism by John the Baptist</div><div class="event-desc">In Christian tradition, Jesus was baptized by John the Baptist in the Jordan River, marking the beginning of his public ministry. The heavens opened and the Holy Spirit descended like a dove, while a voice declared: "This is my beloved Son." This event is foundational in Christian theology.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M50,80 Q100,60 170,70 Q240,60 290,80 L280,160 L60,160 Z" fill="#0A1525" opacity="0.7"/><circle cx="100" cy="115" r="12" fill="#2A1A0A"/><circle cx="140" cy="110" r="12" fill="#2A1A0A"/><circle cx="180" cy="108" r="12" fill="#2A1A0A"/><circle cx="220" cy="110" r="12" fill="#2A1A0A"/><circle cx="255" cy="115" r="12" fill="#2A1A0A"/><rect x="130" y="80" width="80" height="30" rx="3" fill="#3A2A10" opacity="0.8"/><circle cx="100" cy="90" r="15" fill="none" stroke="#4A8BDB" stroke-width="0.5" opacity="0.4" stroke-dasharray="3,3"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">THE LAST SUPPER</text></svg></div><div class="event-num">04</div><div class="event-body"><div class="event-label">Christian & Islamic Parallel</div><div class="event-title">The Table Spread from Heaven (Ma'ida)</div><div class="event-desc">In both Christian tradition (Last Supper) and Islamic Scripture (Surah Al-Ma'idah), a divine table descends for the disciples of Isa. The disciples asked Isa to pray for food from the sky; it descended as a sign and a feast. This event gives the Quran's 5th chapter its name.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M80,160 Q120,100 170,70 Q220,100 260,160" fill="none" stroke="#4A8BDB" stroke-width="1" opacity="0.4"/><circle cx="170" cy="75" r="30" fill="#0A1A2A"/><path d="M155,72 Q160,58 170,55 Q180,58 185,72 Q180,75 170,72 Q160,75 155,72 Z" fill="#4A8BDB" opacity="0.5"/><path d="M155,78 L185,78" stroke="#4A8BDB" stroke-width="0.5" opacity="0.5"/><ellipse cx="170" cy="130" rx="30" ry="10" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">HEALED THE BLIND</text></svg></div><div class="event-num">05</div><div class="event-body"><div class="event-label">Divine Miracle</div><div class="event-title">Healed the Blind, Lepers, and Dead</div><div class="event-desc">Both the Quran and Gospels attest that Isa healed those blind from birth, cured lepers, and raised the dead — all by Allah's permission. In the Quran (3:49), Isa himself says "I heal those born blind and the leprous, and I bring the dead back to life, by the will of Allah."</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M60,160 L170,50 L280,160 Z" fill="#0A1525" opacity="0.7"/><circle cx="170" cy="55" r="25" fill="#0A1020"/><ellipse cx="170" cy="48" rx="15" ry="8" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/><line x1="170" y1="80" x2="170" y2="140" stroke="#4A8BDB" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.4"/><path d="M130,115 L170,105 L210,115" fill="none" stroke="#4A8BDB" stroke-width="0.5" opacity="0.4"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">SERMON ON THE MOUNT</text></svg></div><div class="event-num">06</div><div class="event-body"><div class="event-label">Great Teaching</div><div class="event-title">The Sermon on the Mount</div><div class="event-desc">One of the most profound moral teachings in religious history, the Sermon on the Mount contains the Beatitudes and the core of Jesus's ethical teaching: love your enemies, turn the other cheek, seek first the Kingdom of God. It continues to be studied across Christian and interfaith communities.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M60,110 Q100,80 130,100 Q160,120 170,95 Q180,70 210,90 Q240,110 280,90" fill="none" stroke="#4A8BDB" stroke-width="1.5" opacity="0.6"/><circle cx="170" cy="95" r="20" fill="#0A2A4A" opacity="0.8"/><path d="M155,95 Q160,85 170,82 Q180,85 185,95 Q180,100 170,100 Q160,100 155,95 Z" fill="#4A8BDB" opacity="0.4"/><path d="M0,130 Q85,110 170,120 Q255,130 340,110 L340,180 L0,180 Z" fill="#0A1525" opacity="0.6"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">WALKED ON WATER</text></svg></div><div class="event-num">07</div><div class="event-body"><div class="event-label">Miracle</div><div class="event-title">Walked on Water</div><div class="event-desc">In the Gospels, Jesus walks across the Sea of Galilee during a storm, then reaches out to save the sinking Peter. This miracle demonstrates mastery over nature and is one of the most iconic events in Christian tradition, symbolizing faith over fear.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M170,60 Q200,80 210,110 Q200,140 170,155 Q140,140 130,110 Q140,80 170,60 Z" fill="#0A1525"/><text x="170" y="115" text-anchor="middle" font-size="50" fill="#C9A84C" opacity="0.25">🕊</text><path d="M155,70 L185,70 L185,150 L155,150 Z" fill="none" stroke="#4A8BDB" stroke-width="0.5" opacity="0.3"/><circle cx="170" cy="60" r="15" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">CREATED BIRDS FROM CLAY</text></svg></div><div class="event-num">08</div><div class="event-body"><div class="event-label">Quranic Miracle</div><div class="event-title">Fashioned Birds from Clay</div><div class="event-desc">Unique to the Quran (3:49), Isa fashioned the shape of birds from clay, breathed into them, and they became living birds by Allah's permission. This remarkable parallel to the creation of Adam — fashioned from clay and given life by divine breath — elevates Isa's miraculous status in Islam.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M130,160 L130,60 Q170,40 210,60 L210,160" fill="none" stroke="#4A8BDB" stroke-width="1" opacity="0.4"/><line x1="100" y1="115" x2="240" y2="115" stroke="#4A8BDB" stroke-width="1" opacity="0.3"/><circle cx="170" cy="50" r="18" fill="#0A1525"/><line x1="170" y1="65" x2="170" y2="115" stroke="#4A8BDB" stroke-width="1.5" opacity="0.5"/><path d="M145,95 L195,95" stroke="#4A8BDB" stroke-width="1.5" opacity="0.5"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">THE CRUCIFIXION — CHRISTIAN VIEW</text></svg></div><div class="event-num">09</div><div class="event-body"><div class="event-label">Central Mystery</div><div class="event-title">The Crucifixion (Christian View)</div><div class="event-desc">In Christianity, Jesus's crucifixion at Golgotha is the central event of salvation history — God sacrificing himself in human form to atone for humanity's sin. His death and resurrection form the cornerstone of Christian faith and theology across all denominations.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M130,160 L130,60 Q170,40 210,60 L210,160" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.4"/><line x1="100" y1="115" x2="240" y2="115" stroke="#C9A84C" stroke-width="1" opacity="0.3"/><path d="M170,40 L130,160 L210,160 Z" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"/><path d="M140,100 Q170,80 200,100 Q190,120 170,125 Q150,120 140,100 Z" fill="#C9A84C" opacity="0.15"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#C9A84C" letter-spacing="2">NOT CRUCIFIED — ISLAMIC VIEW</text></svg></div><div class="event-num">10</div><div class="event-body"><div class="event-label">Islamic Perspective</div><div class="event-title">The Apparent Crucifixion (Islamic View)</div><div class="event-desc">The Quran (4:157-158) states that Isa was not crucified nor killed — "it was made to appear so to them." Rather, Allah raised Isa bodily to heaven before the crucifixion. Another was made to resemble him and was crucified in his place. Isa is alive in heaven and will return.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><ellipse cx="170" cy="120" rx="100" ry="30" fill="#0A1020" opacity="0.7"/><circle cx="170" cy="80" r="35" fill="#0A1525"/><path d="M145,60 Q155,45 170,42 Q185,45 195,60 Q190,70 170,68 Q150,70 145,60 Z" fill="#C9A84C" opacity="0.4"/><path d="M155,72 Q162,80 170,78 Q178,80 185,72" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><path d="M170,45 L163,58 L170,54 L177,58 Z" fill="#C9A84C" opacity="0.6"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">ASCENSION TO HEAVEN</text></svg></div><div class="event-num">11</div><div class="event-body"><div class="event-label">Ascension</div><div class="event-title">Raised Alive to the Heavens</div><div class="event-desc">Both Islam and Christianity agree that Jesus was physically raised to heaven. Christianity teaches this happened after resurrection; Islam teaches he was raised without dying. The Quran states (4:158): "Rather, Allah raised him to Himself." Isa is alive in the second heaven, near to Allah.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050A10"/><path d="M80,160 L170,30 L260,160 Z" fill="#0A1525" opacity="0.6"/><circle cx="170" cy="95" r="40" fill="none" stroke="#4A8BDB" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.4"/><path d="M150,95 L190,95" stroke="#4A8BDB" stroke-width="1.5" opacity="0.5"/><path d="M170,75 L170,115" stroke="#4A8BDB" stroke-width="1.5" opacity="0.5"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">RAISING OF LAZARUS</text></svg></div><div class="event-num">12</div><div class="event-body"><div class="event-label">Ultimate Miracle</div><div class="event-title">Raising Lazarus from the Dead</div><div class="event-desc">In the Gospel of John, Jesus raises Lazarus four days after his death, crying "Lazarus, come out!" This miracle caused many to believe, but also alarmed the authorities, contributing to the plot against Jesus. In the Quran, Isa's power to raise the dead is confirmed as a divine miracle.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><circle cx="110" cy="100" r="20" fill="#0A1020"/><circle cx="155" cy="90" r="20" fill="#0A1020"/><circle cx="200" cy="90" r="20" fill="#0A1020"/><circle cx="245" cy="100" r="20" fill="#0A1020"/><circle cx="170" cy="75" r="22" fill="#1A2A3A"/><path d="M162,70 Q170,62 178,70 Q175,78 170,76 Q165,78 162,70 Z" fill="#4A8BDB" opacity="0.5"/><path d="M80,130 Q130,115 170,120 Q210,115 260,130 L260,160 L80,160 Z" fill="#0A1020" opacity="0.7"/><text x="170" y="175" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">TWELVE APOSTLES CHOSEN</text></svg></div><div class="event-num">13</div><div class="event-body"><div class="event-label">The Disciples</div><div class="event-title">The Twelve Apostles (Hawariyyun)</div><div class="event-desc">Both the Quran and Gospels speak of the disciples (hawariyyun in Arabic) who supported Isa/Jesus. The Quran (61:14) calls them "helpers of Allah," while the Gospels name them as the Twelve Apostles chosen to spread the gospel to all nations after Jesus's departure.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M70,120 Q120,80 170,90 Q220,80 270,120" fill="none" stroke="#4A8BDB" stroke-width="1" opacity="0.4"/><ellipse cx="170" cy="95" rx="60" ry="35" fill="#0A1525" opacity="0.7"/><line x1="130" y1="95" x2="210" y2="95" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.4"/><path d="M155,80 Q170,70 185,80 L183,100 Q170,108 157,100 Z" fill="#C9A84C" opacity="0.2"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">THE INJIL — GOSPEL REVEALED</text></svg></div><div class="event-num">14</div><div class="event-body"><div class="event-label">Divine Scripture</div><div class="event-title">The Injil — Gospel Given to Isa</div><div class="event-desc">The Quran affirms that Allah revealed the Injil (Gospel) to Isa, which "confirmed the Torah before it and provided guidance and light." The Quran holds Isa as a recipient of divine revelation equal in standing to Moses and the Torah. The original Injil, in Islamic view, was later altered.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M0,160 Q85,130 170,145 Q255,160 340,130 L340,180 L0,180 Z" fill="#0A1020"/><circle cx="170" cy="80" r="40" fill="#0A1525" opacity="0.8"/><path d="M145,60 Q160,42 170,40 Q180,42 195,60 Q188,72 170,70 Q152,72 145,60 Z" fill="#C9A84C" opacity="0.3"/><path d="M150,75 Q160,85 170,82 Q180,85 190,75" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/><circle cx="170" cy="55" r="10" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">TRANSFIGURATION ON THE MOUNT</text></svg></div><div class="event-num">15</div><div class="event-body"><div class="event-label">Transformation</div><div class="event-title">The Transfiguration</div><div class="event-desc">On a mountaintop, Jesus's appearance was transformed — his face shone like the sun, his clothes became dazzling white. Moses and Elijah appeared alongside him, and a divine voice spoke from a cloud. This event revealed his divine glory to three of his closest disciples.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050A10"/><rect x="80" y="60" width="180" height="110" rx="3" fill="#0A1020"/><path d="M170,40 L145,60 L195,60 Z" fill="#0A1020"/><circle cx="170" cy="60" r="8" fill="#C9A84C" opacity="0.6"/><path d="M125,100 Q145,90 165,95 Q175,88 185,92 Q205,85 220,95" fill="none" stroke="#4A8BDB" stroke-width="0.8" opacity="0.5"/><path d="M120,115 Q140,107 160,112 Q170,105 180,110 Q200,103 225,112" fill="none" stroke="#4A8BDB" stroke-width="0.8" opacity="0.4"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">CLEANSING THE TEMPLE</text></svg></div><div class="event-num">16</div><div class="event-body"><div class="event-label">Righteous Anger</div><div class="event-title">Cleansing the Temple</div><div class="event-desc">Jesus drove out merchants and money-changers from the Temple in Jerusalem, declaring "My house shall be a house of prayer, but you have made it a den of thieves." This bold act directly challenged the religious establishment and accelerated the plot to arrest him.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M170,155 Q100,130 60,90 Q50,50 90,35 Q130,20 170,50 Q210,20 250,35 Q290,50 280,90 Q240,130 170,155 Z" fill="#0A1525"/><path d="M170,140 Q115,120 85,90 Q78,60 105,50 Q135,38 170,62 Q205,38 235,50 Q262,60 255,90 Q225,120 170,140 Z" fill="none" stroke="#4A8BDB" stroke-width="0.8" opacity="0.4"/><circle cx="170" cy="95" r="15" fill="#4A8BDB" opacity="0.2"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">PRAYER IN GETHSEMANE</text></svg></div><div class="event-num">17</div><div class="event-body"><div class="event-label">Night of Submission</div><div class="event-title">The Night in Gethsemane</div><div class="event-desc">Before his arrest, Jesus prayed in the garden of Gethsemane in anguish, saying "Not my will, but Yours be done." In Islamic context, this parallels the total submission to Allah — the very meaning of Islam. The night reveals the human and spiritual dimension of this great prophet.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M110,155 Q140,120 170,110 Q200,120 230,155" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.4"/><path d="M60,160 L100,80 L140,110 L170,60 L200,110 L240,80 L280,160 Z" fill="#0A1A25" opacity="0.7"/><path d="M150,80 Q165,65 170,55 Q175,65 190,80 Q180,88 170,85 Q160,88 150,80 Z" fill="#C9A84C" opacity="0.3"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">SECOND COMING — RETURN TO EARTH</text></svg></div><div class="event-num">18</div><div class="event-body"><div class="event-label">The Return</div><div class="event-title">The Second Coming of Isa</div><div class="event-desc">All three traditions anticipate a final return. In Islam, Isa will descend near the white minaret in Damascus, break the cross, kill the swine, and lead Muslims in prayer before defeating Dajjal. In Christianity, Jesus returns in glory to judge the living and the dead. The world awaits him.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M110,160 Q140,100 170,80 Q200,100 230,160" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/><circle cx="170" cy="80" r="28" fill="#0A1A2A"/><path d="M155,72 Q163,58 170,55 Q177,58 185,72 Q178,80 170,78 Q162,80 155,72 Z" fill="#C9A84C" opacity="0.4"/><circle cx="170" cy="65" r="10" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><path d="M155,85 Q162,92 170,90 Q178,92 185,85" fill="none" stroke="#4A8BDB" stroke-width="1" opacity="0.5"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">ISHA MARRIES AND DIES ON EARTH</text></svg></div><div class="event-num">19</div><div class="event-body"><div class="event-label">Islamic End Narrative</div><div class="event-title">Isa's Life and Death After Return</div><div class="event-desc">In Islamic tradition, after his return to earth, Isa will live a full human life — marrying, having children, and reigning in justice for 40 years. He will perform Hajj, pray facing the Ka'ba, and eventually die a natural death, to be buried beside the Prophet Muhammad ﷺ in Medina.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050A10"/><path d="M100,160 Q135,80 170,50 Q205,80 240,160" fill="none" stroke="#4A8BDB" stroke-width="1" opacity="0.3"/><text x="170" y="95" text-anchor="middle" font-size="60" fill="#4A8BDB" opacity="0.1">✝</text><circle cx="170" cy="90" r="35" fill="none" stroke="#4A8BDB" stroke-width="0.5" opacity="0.3"/><circle cx="170" cy="90" r="50" fill="none" stroke="#4A8BDB" stroke-width="0.3" opacity="0.2"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">RESURRECTION — CHRISTIAN DOCTRINE</text></svg></div><div class="event-num">20</div><div class="event-body"><div class="event-label">Cornerstone of Faith</div><div class="event-title">The Resurrection</div><div class="event-desc">The Resurrection of Jesus on the third day is the foundational miracle of Christianity. The empty tomb, the appearances to Mary Magdalene, the disciples, and finally over 500 witnesses — the Apostle Paul writes "if Christ has not been raised, your faith is futile." It is everything for Christians.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050810"/><path d="M90,80 Q130,50 170,55 Q210,50 250,80 L245,140 L95,140 Z" fill="#0A1020" opacity="0.7"/><circle cx="170" cy="70" r="20" fill="#0A1525"/><path d="M158,66 Q165,55 170,52 Q175,55 182,66 Q178,74 170,72 Q162,74 158,66 Z" fill="#4A8BDB" opacity="0.4"/><path d="M130,105 Q140,95 155,100 Q165,93 170,90 Q175,93 185,100 Q200,95 210,105" fill="none" stroke="#4A8BDB" stroke-width="0.8" opacity="0.5"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#4A8BDB" letter-spacing="2">ISHA CONFIRMS PROPHET MUHAMMAD ﷺ</text></svg></div><div class="event-num">21</div><div class="event-body"><div class="event-label">Islamic Unique Teaching</div><div class="event-title">Isa Foretells the Coming of Muhammad ﷺ</div><div class="event-desc">The Quran (61:6) records Isa saying: "O Children of Israel! I am a messenger of Allah to you, confirming the Torah... and bringing good tidings of a messenger to come after me, whose name shall be Ahmad." Islam views this as a prophecy of the Prophet Muhammad ﷺ.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+    </div>
+
+    <div class="quotes-section reveal">
+      <div class="quotes-title">✝ SACRED REFERENCES ☽</div>
+      <div class="quotes-grid">
+        <div class="quote-card"><div class="quote-text">The Messiah, Isa son of Maryam, was only a messenger of Allah and His word which He directed to Mary and a soul from Him. So believe in Allah and His messengers.</div><div class="quote-source">Quran 4:171</div></div>
+        <div class="quote-card"><div class="quote-text">For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.</div><div class="quote-source">John 3:16 — New Testament</div></div>
+        <div class="quote-card"><div class="quote-text">By Allah, Isa ibn Maryam will indeed descend as a just judge. He will break the cross, kill the swine, and abolish the jizyah.</div><div class="quote-source">Sahih Bukhari 2222 — Hadith</div></div>
+        <div class="quote-card"><div class="quote-text">The most honored of women are four: Maryam daughter of Imran, Asiya wife of Pharaoh, Khadijah daughter of Khuwaylid, and Fatimah daughter of Muhammad.</div><div class="quote-source">Hadith — Tirmidhi</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ MESHIAH SECTION -->
+<div id="meshiah-section" class="section-wrap" data-theme="meshiah">
+  <div class="char-header">
+    <div class="char-header-bg" style="background:linear-gradient(135deg,#001A0A 0%,#083A18 40%,#000A05 100%);">
+      <svg viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.4">
+        <defs>
+          <radialGradient id="meshiah-glow" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#3ABB6A" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1400" height="500" fill="url(#meshiah-glow)"/>
+        <!-- Star of David -->
+        <polygon points="700,100 760,200 640,200" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+        <polygon points="700,300 640,200 760,200" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
+        <circle cx="700" cy="200" r="120" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"/>
+        <!-- Menorah hint -->
+        <line x1="700" y1="380" x2="700" y2="300" stroke="#C9A84C" stroke-width="2" opacity="0.3"/>
+        <line x1="680" y1="380" x2="680" y2="320" stroke="#C9A84C" stroke-width="1.5" opacity="0.25"/>
+        <line x1="720" y1="380" x2="720" y2="320" stroke="#C9A84C" stroke-width="1.5" opacity="0.25"/>
+        <line x1="660" y1="380" x2="660" y2="340" stroke="#C9A84C" stroke-width="1.5" opacity="0.2"/>
+        <line x1="740" y1="380" x2="740" y2="340" stroke="#C9A84C" stroke-width="1.5" opacity="0.2"/>
+        <line x1="640" y1="380" x2="640" y2="355" stroke="#C9A84C" stroke-width="1.5" opacity="0.15"/>
+        <line x1="760" y1="380" x2="760" y2="355" stroke="#C9A84C" stroke-width="1.5" opacity="0.15"/>
+      </svg>
+    </div>
+    <div class="char-header-overlay"></div>
+    <div class="char-header-overlay2"></div>
+    <div class="char-header-content">
+      <div class="char-badge">The Anointed One · מָשִׁיחַ · المسيح</div>
+      <h1 class="char-name">Meshiah</h1>
+      <p class="char-epithet">"The Anointed Redeemer who Shall Restore the Kingdom and Bring the World to Peace"</p>
+      <div class="char-traditions">
+        <span class="tradition-tag">✡ Judaism — Awaited Redeemer, Son of David</span>
+        <span class="tradition-tag">✝ Christianity — Jesus Christ, Already Come</span>
+        <span class="tradition-tag">☽ Islam — Isa, the Returning Messiah</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div class="story-block reveal">
+      <div class="story-text">
+        <h2>The Anointed One — Three Interpretations</h2>
+        <p>The word "Messiah" — Mashiach in Hebrew, Masih in Arabic, Christ in Greek — means "the anointed one." It describes a figure who is consecrated with oil for a divine mission: prophet, priest, or king. The great theological divide of the Abrahamic faiths centers on who this figure is and whether they have come.</p>
+        <p>For Judaism, the Meshiah is still to come — a human descendant of King David who will restore the Jewish kingdom, rebuild the Temple in Jerusalem, gather the dispersed Jewish people, and usher in an era of universal peace and knowledge of God. No supernatural attributes are required; he is a great human leader.</p>
+        <blockquote>"The Meshiah will be a great political leader, descended from King David. He will be well versed in Jewish law... and will observe its commandments. He will be a charismatic leader, inspiring others to follow his example." — Maimonides, Mishneh Torah</blockquote>
+        <p>In Christianity, the Meshiah has already come in the person of Jesus Christ — with a spiritual kingdom rather than political. In Islam, the Messiah is Isa ibn Maryam who shall return in the end times to establish justice upon the earth.</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-frame">
+          <svg class="svg-art" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="meshiah-bg-g" cx="50%" cy="40%">
+                <stop offset="0%" stop-color="#051A0A"/>
+                <stop offset="100%" stop-color="#030A05"/>
+              </radialGradient>
+            </defs>
+            <rect width="500" height="400" fill="url(#meshiah-bg-g)"/>
+            <!-- Jerusalem skyline -->
+            <path d="M0,280 L50,280 L50,240 L80,240 L80,210 L110,210 L110,230 L140,230 L140,200 L160,200 L160,180 L170,165 L180,180 L180,200 L200,200 L200,225 L230,225 L230,205 L250,195 L270,205 L270,225 L300,225 L300,240 L330,240 L330,255 L360,255 L360,270 L400,270 L400,280 L500,280 L500,380 L0,380 Z" fill="#0A1A08"/>
+            <!-- Dome of the Rock -->
+            <path d="M215,195 Q250,160 285,195 L285,230 L215,230 Z" fill="#1A2A10"/>
+            <ellipse cx="250" cy="195" rx="35" ry="22" fill="#1A3A15"/>
+            <ellipse cx="250" cy="192" rx="30" ry="18" fill="#2A4A20"/>
+            <!-- Gold dome shine -->
+            <ellipse cx="250" cy="188" rx="25" ry="14" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
+            <!-- Star of David in sky -->
+            <polygon points="250,50 270,85 230,85" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.6"/>
+            <polygon points="250,95 270,60 230,60" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="250" cy="72" r="40" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+            <!-- Rays from Star -->
+            <line x1="250" y1="30" x2="250" y2="10" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+            <line x1="280" y1="40" x2="300" y2="25" stroke="#C9A84C" stroke-width="0.5" opacity="0.25"/>
+            <line x1="220" y1="40" x2="200" y2="25" stroke="#C9A84C" stroke-width="0.5" opacity="0.25"/>
+            <!-- Messianic figure on hill -->
+            <circle cx="250" cy="175" r="12" fill="#1A2A10"/>
+            <rect x="244" y="183" width="12" height="20" rx="3" fill="#1A2A10"/>
+            <!-- Crown/halo -->
+            <circle cx="250" cy="175" r="18" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+            <!-- Words in Hebrew/Arabic on ground -->
+            <text x="250" y="350" text-anchor="middle" font-size="14" fill="#3ABB6A" opacity="0.3">מָשִׁיחַ</text>
+            <!-- Mountains in bg -->
+            <path d="M0,270 Q60,220 120,255 Q180,230 250,260 Q320,230 380,255 Q440,220 500,270" fill="#0D1A08" opacity="0.7"/>
+            <!-- Frame -->
+            <rect x="10" y="10" width="480" height="380" fill="none" stroke="#1A3A10" stroke-width="0.5" opacity="0.5"/>
+          </svg>
+          <div class="visual-caption">JERUSALEM — The Messianic Promise</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider reveal"><div class="divider-line"></div><span class="divider-icon">✡</span><div class="divider-line"></div></div>
+    <h2 class="events-title reveal">20+ Sacred Events of the Meshiah</h2>
+
+    <div class="events-grid reveal">
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><polygon points="170,35 200,85 140,85" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.7"/><polygon points="170,90 200,40 140,40" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.7"/><circle cx="170" cy="62" r="38" fill="none" stroke="#3ABB6A" stroke-width="0.5" opacity="0.3"/><text x="170" y="150" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">DESCENDED FROM KING DAVID</text></svg></div><div class="event-num">01</div><div class="event-body"><div class="event-label">Lineage</div><div class="event-title">The Davidic Lineage</div><div class="event-desc">Jewish tradition requires the Meshiah to be a direct patrilineal descendant of King David of the tribe of Judah. This is a fundamental requirement — no genealogical link, no claim to Messiahship. The house of David carries the covenant of an eternal throne.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M100,160 L100,60 Q170,35 240,60 L240,160 Z" fill="#0A1A08" opacity="0.7"/><rect x="120" y="100" width="100" height="60" rx="2" fill="#0D2010"/><path d="M120,100 L170,65 L220,100" fill="#0D2010"/><circle cx="170" cy="70" r="8" fill="#C9A84C" opacity="0.6"/><line x1="170" y1="100" x2="170" y2="150" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">REBUILDS THE TEMPLE IN JERUSALEM</text></svg></div><div class="event-num">02</div><div class="event-body"><div class="event-label">Core Requirement</div><div class="event-title">Rebuilds the Third Temple</div><div class="event-desc">One of the primary tasks of the Meshiah in Jewish theology is rebuilding the Beit HaMikdash (Holy Temple) on the Temple Mount in Jerusalem — the same site where the First Temple of Solomon and Second Temple once stood, both destroyed by foreign powers.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M80,100 Q130,60 170,70 Q210,60 260,100 L250,155 L90,155 Z" fill="#0A1A08" opacity="0.7"/><circle cx="110" cy="105" r="10" fill="#1A2A10"/><circle cx="140" cy="95" r="10" fill="#1A2A10"/><circle cx="170" cy="92" r="10" fill="#1A2A10"/><circle cx="200" cy="95" r="10" fill="#1A2A10"/><circle cx="230" cy="105" r="10" fill="#1A2A10"/><path d="M90,130 L250,130" stroke="#3ABB6A" stroke-width="0.5" opacity="0.4" stroke-dasharray="3,3"/><text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">GATHERS THE JEWISH PEOPLE</text></svg></div><div class="event-num">03</div><div class="event-body"><div class="event-label">Ingathering</div><div class="event-title">Gathers the Dispersed Jewish People</div><div class="event-desc">The Meshiah will gather all Jewish people from the four corners of the earth back to the Land of Israel. The diaspora scattered across millennia — Babylonian exile, Roman dispersion, medieval expulsions, the Holocaust — will end with this divine ingathering called the Kibbutz Galuyot.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M80,100 Q110,60 170,55 Q230,60 260,100 L260,160 L80,160 Z" fill="#0A1A08" opacity="0.6"/><path d="M120,130 Q150,100 180,130" fill="none" stroke="#3ABB6A" stroke-width="1.5" opacity="0.5"/><path d="M160,120 Q170,105 180,120" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/><circle cx="170" cy="80" r="18" fill="#0D2010"/><path d="M160,76 Q165,66 170,63 Q175,66 180,76 Q176,83 170,81 Q164,83 160,76 Z" fill="#3ABB6A" opacity="0.4"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">ERA OF WORLD PEACE</text></svg></div><div class="event-num">04</div><div class="event-body"><div class="event-label">Ultimate Goal</div><div class="event-title">Ushers in Universal Peace</div><div class="event-desc">Isaiah 2:4 prophesies: nations "shall beat their swords into plowshares and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war anymore." The Messianic era is defined by the complete cessation of war and universal peace.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><rect x="115" y="55" width="110" height="100" rx="3" fill="#0A1A08"/><path d="M115,55 L170,25 L225,55" fill="#0A1A08"/><circle cx="170" cy="35" r="8" fill="#C9A84C" opacity="0.5"/><rect x="130" y="75" width="30" height="40" rx="2" fill="#0D2010" stroke="#3ABB6A" stroke-width="0.5" opacity="0.5"/><rect x="180" y="75" width="30" height="40" rx="2" fill="#0D2010" stroke="#3ABB6A" stroke-width="0.5" opacity="0.5"/><rect x="147" y="120" width="46" height="30" rx="2" fill="#0D2010" stroke="#3ABB6A" stroke-width="0.5" opacity="0.5"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">RESTORES JEWISH LAW — SANHEDRIN</text></svg></div><div class="event-num">05</div><div class="event-body"><div class="event-label">Legal Restoration</div><div class="event-title">Restores the Sanhedrin and Torah Law</div><div class="event-desc">The Meshiah will restore the Great Sanhedrin — the supreme Jewish court — to Jerusalem and reestablish full observance of Torah law across the world. The 613 commandments will be practiced in their entirety, including Temple sacrifices and priestly rites.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M60,150 Q170,100 280,150 L280,170 L60,170 Z" fill="#0A1A08"/><path d="M170,80 Q200,50 230,80 Q220,110 200,115 L200,80 Z" fill="#1A2A10"/><path d="M170,80 Q140,50 110,80 Q120,110 140,115 L140,80 Z" fill="#1A2A10"/><circle cx="170" cy="70" r="18" fill="#1A2A10"/><path d="M158,65 Q163,55 170,52 Q177,55 182,65 Q177,73 170,71 Q163,73 158,65 Z" fill="#3ABB6A" opacity="0.4"/><circle cx="170" cy="60" r="12" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">SON OF DAVID — KING OF ISRAEL</text></svg></div><div class="event-num">06</div><div class="event-body"><div class="event-label">Kingship</div><div class="event-title">Becomes King Over Israel and All Nations</div><div class="event-desc">The Meshiah will be crowned King over Israel and ultimately over all nations. Unlike earthly kings, his reign will be characterized by perfect wisdom and justice. All nations will recognize the God of Israel and come to Jerusalem to worship — fulfilling Zechariah's vision.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M60,90 Q100,50 130,70 Q145,55 170,60 Q195,55 210,70 Q240,50 280,90 L260,160 L80,160 Z" fill="#0A1A08" opacity="0.7"/><path d="M110,140 L110,80 L130,70" fill="none" stroke="#3ABB6A" stroke-width="0.8" opacity="0.4"/><path d="M170,120 L170,55" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5" stroke-dasharray="3,2"/><path d="M230,140 L230,80 L210,70" fill="none" stroke="#3ABB6A" stroke-width="0.8" opacity="0.4"/><path d="M60,150 Q110,130 170,140 Q230,130 280,150" fill="none" stroke="#3ABB6A" stroke-width="1" opacity="0.4"/><text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">ALL NATIONS WORSHIP ONE GOD</text></svg></div><div class="event-num">07</div><div class="event-body"><div class="event-label">Spiritual Transformation</div><div class="event-title">Universal Recognition of God</div><div class="event-desc">In the Messianic era, all peoples of the earth will abandon idol worship and acknowledge the one God. The prophet Zephaniah declares God will "transform the peoples to a pure language, that they may all call upon the Name of the Lord." This universal monotheism is the culmination of history.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M170,30 Q200,60 205,100 Q195,140 170,155 Q145,140 135,100 Q140,60 170,30 Z" fill="#0A1A08" opacity="0.8"/><text x="170" y="100" text-anchor="middle" font-size="18" fill="#3ABB6A" opacity="0.4">מָשִׁיחַ</text><text x="170" y="122" text-anchor="middle" font-size="12" fill="#C9A84C" opacity="0.3">בֶּן דָּוִד</text><path d="M155,70 L185,70 L185,140 L155,140 Z" fill="none" stroke="#3ABB6A" stroke-width="0.5" opacity="0.3"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">THE MASHIACH — ANOINTING WITH OIL</text></svg></div><div class="event-num">08</div><div class="event-body"><div class="event-label">The Anointing</div><div class="event-title">Anointed with Sacred Oil</div><div class="event-desc">The Hebrew word "Mashiach" literally means "anointed." Kings and high priests were anointed with sacred olive oil (shemen hamishcha) as a sign of divine selection. The Messiah will be anointed with the original sacred oil — recreated or preserved from ancient times — establishing his sacred office.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M60,120 Q100,80 140,95 Q160,75 170,70 Q180,75 200,95 Q240,80 280,120 L270,160 L70,160 Z" fill="#0A1A08" opacity="0.7"/><path d="M120,145 L120,95" stroke="#3ABB6A" stroke-width="0.8" opacity="0.3"/><path d="M170,145 L170,70" stroke="#C9A84C" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/><path d="M220,145 L220,95" stroke="#3ABB6A" stroke-width="0.8" opacity="0.3"/><circle cx="170" cy="68" r="15" fill="#0D2010"/><path d="M160,64 Q165,55 170,52 Q175,55 180,64 Q176,71 170,69 Q164,71 160,64 Z" fill="#3ABB6A" opacity="0.4"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">DEFEATS ENEMIES OF ISRAEL</text></svg></div><div class="event-num">09</div><div class="event-body"><div class="event-label">Military Role</div><div class="event-title">Defeats the Enemies of Israel</div><div class="event-desc">A key criterion in Jewish Messianism is military success — the Messiah must win the wars of God, defeating all of Israel's enemies. Maimonides used this criteria to disqualify Jesus and Bar Kokhba (who were defeated) as the Messiah. The true Messiah will be victorious.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M170,155 Q90,130 60,90 Q55,50 100,40 Q140,30 170,60 Q200,30 240,40 Q285,50 280,90 Q250,130 170,155 Z" fill="#0A1A08"/><path d="M170,145 Q104,122 80,90 Q76,60 108,52 Q140,42 170,66 Q200,42 232,52 Q264,60 260,90 Q236,122 170,145 Z" fill="none" stroke="#3ABB6A" stroke-width="0.5" opacity="0.3"/><path d="M135,75 Q148,62 170,60 Q192,62 205,75 Q200,90 185,95 Q170,98 155,95 Q140,90 135,75 Z" fill="#1A3A15"/><path d="M155,82 Q162,75 170,73 Q178,75 185,82" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">MESSIANIC BEN JOSEPH — PRECURSOR</text></svg></div><div class="event-num">10</div><div class="event-body"><div class="event-label">Jewish Tradition</div><div class="event-title">Messiah Ben Joseph — The First Messiah</div><div class="event-desc">Some Jewish traditions describe two Messiahs: Messiah ben Joseph, a warrior Messiah from the tribe of Ephraim who fights the wars, suffers, and is slain — and Messiah ben David who then rises to complete the redemption. This "suffering servant" concept parallels Christian interpretation of Isaiah 53.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M80,160 L120,80 L170,50 L220,80 L260,160 Z" fill="#0A1A08" opacity="0.6"/><path d="M130,115 Q150,85 170,80 Q190,85 210,115" fill="none" stroke="#3ABB6A" stroke-width="1" opacity="0.5"/><line x1="170" y1="50" x2="170" y2="145" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="3,2" opacity="0.4"/><ellipse cx="170" cy="72" rx="28" ry="15" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">ISAIAH 53 — SUFFERING SERVANT</text></svg></div><div class="event-num">11</div><div class="event-body"><div class="event-label">Prophetic Text</div><div class="event-title">Isaiah 53 — The Suffering Servant</div><div class="event-desc">Isaiah 53 describes one who "was pierced for our transgressions... crushed for our iniquities." Christians identify this as prophecy of Christ; traditional Judaism identifies the Servant as Israel collectively. The text remains the most debated prophetic passage between the faiths.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M60,100 Q120,60 170,70 Q220,60 280,100 L275,155 L65,155 Z" fill="#0A1A08" opacity="0.7"/><circle cx="120" cy="100" r="10" fill="#1A2A10"/>
+<circle cx="155" cy="90" r="10" fill="#1A2A10"/>
+<circle cx="190" cy="90" r="10" fill="#1A2A10"/>
+<circle cx="225" cy="100" r="10" fill="#1A2A10"/>
+<path d="M100,120 Q140,105 170,110 Q200,105 240,120" fill="none" stroke="#3ABB6A" stroke-width="0.5" opacity="0.4"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">GOG AND MAGOG — FINAL BATTLE</text></svg></div><div class="event-num">12</div><div class="event-body"><div class="event-label">Apocalyptic Battle</div><div class="event-title">The War of Gog and Magog</div><div class="event-desc">Ezekiel 38–39 prophesies a final invasion of Israel by the forces of Gog from the land of Magog. In Jewish eschatology, this catastrophic battle precedes or coincides with Messianic arrival. The Islamic tradition of Ya'juj and Ma'juj, and Christian Armageddon, all reflect this shared apocalyptic vision.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M80,160 L80,80 Q120,50 170,55 Q220,50 260,80 L260,160 Z" fill="#0A1A08" opacity="0.7"/><path d="M140,80 Q160,65 170,60 Q180,65 200,80 L200,140 L140,140 Z" fill="#1A3A10"/><circle cx="170" cy="65" r="14" fill="#0A1A08"/><path d="M162,61 Q167,52 170,50 Q173,52 178,61 Q174,67 170,65 Q166,67 162,61 Z" fill="#C9A84C" opacity="0.4"/><circle cx="170" cy="55" r="9" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">ELIJAH HERALDS HIS ARRIVAL</text></svg></div><div class="event-num">13</div><div class="event-body"><div class="event-label">Precursor</div><div class="event-title">Elijah the Prophet Returns First</div><div class="event-desc">Malachi 4:5 prophesies: "Behold, I will send you Elijah the prophet before the great and awesome day of the Lord." Elijah must return before the Messiah to turn the hearts of parents to their children. At every Passover Seder, Jews pour a cup of wine for Elijah, anticipating his arrival.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M170,45 Q230,80 230,130 Q200,160 170,165 Q140,160 110,130 Q110,80 170,45 Z" fill="#0A1A08"/><path d="M155,80 Q160,65 170,60 Q180,65 185,80 Q182,95 170,95 Q158,95 155,80 Z" fill="#3ABB6A" opacity="0.3"/><path d="M140,110 Q150,95 160,100 Q165,90 170,88 Q175,90 180,100 Q190,95 200,110 Q195,125 185,128 Q175,135 170,132 Q165,135 155,128 Q145,125 140,110 Z" fill="#1A3A10"/><text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">BORN IN BETHLEHEM — MICAH 5:2</text></svg></div><div class="event-num">14</div><div class="event-body"><div class="event-label">Prophetic Birthplace</div><div class="event-title">Born in Bethlehem</div><div class="event-desc">Micah 5:2 prophesies: "But you, Bethlehem Ephrathah, though you are small among the clans of Judah, out of you will come for me one who will be ruler over Israel, whose origins are from of old, from ancient times." Christians cite this as fulfilled by Jesus; Jews await its fulfillment.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M0,160 Q85,130 170,145 Q255,160 340,130 L340,180 L0,180 Z" fill="#0A1A08"/><path d="M90,145 L90,60 Q130,35 170,40 Q210,35 250,60 L250,145" fill="none" stroke="#3ABB6A" stroke-width="0.5" opacity="0.4"/><circle cx="170" cy="50" r="18" fill="#0D2010"/><path d="M158,46 Q163,36 170,33 Q177,36 182,46 Q178,53 170,51 Q162,53 158,46 Z" fill="#C9A84C" opacity="0.4"/><path d="M120,100 Q145,80 170,85 Q195,80 220,100 Q215,120 195,125 Q170,128 145,125 Q125,120 120,100 Z" fill="#1A3A10" opacity="0.7"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">ENTRY INTO JERUSALEM ON DONKEY</text></svg></div><div class="event-num">15</div><div class="event-body"><div class="event-label">Zechariah's Prophecy</div><div class="event-title">Enters Jerusalem on a Donkey</div><div class="event-desc">Zechariah 9:9 prophesies: "See, your king comes to you, righteous and victorious, lowly and riding on a donkey." Christians see this fulfilled in Jesus's Palm Sunday entry; Judaism interprets it as the Messiah arriving humbly, not through military conquest but through divine appointment.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M60,100 Q90,70 120,80 Q145,60 170,65 Q195,60 220,80 Q250,70 280,100 Q270,140 250,150 Q210,165 170,162 Q130,165 90,150 Q70,140 60,100 Z" fill="#0A1A08" opacity="0.7"/><path d="M110,120 Q130,100 150,110 Q165,98 170,95 Q175,98 190,110 Q210,100 230,120" fill="none" stroke="#3ABB6A" stroke-width="1" opacity="0.5"/><circle cx="170" cy="95" r="18" fill="#0D2010"/><path d="M160,91 Q165,81 170,78 Q175,81 180,91 Q176,98 170,96 Q164,98 160,91 Z" fill="#3ABB6A" opacity="0.4"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">DEAD ARE RESURRECTED</text></svg></div><div class="event-num">16</div><div class="event-body"><div class="event-label">End Times</div><div class="event-title">The Resurrection of the Dead</div><div class="event-desc">The Messianic era culminates in the techiyat hametim — the resurrection of all the dead. This belief is a fundamental principle of Jewish faith (one of Maimonides's 13 principles). The righteous dead will be revived in their physical bodies; some teachings specify this occurs in the Land of Israel.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M100,160 Q100,80 110,60 L170,40 L230,60 Q240,80 240,160 Z" fill="#0A1A08" opacity="0.7"/><path d="M130,130 Q150,110 170,115 Q190,110 210,130 L210,155 L130,155 Z" fill="#1A3A10"/><path d="M150,80 Q160,65 170,62 Q180,65 190,80 Q185,95 170,95 Q155,95 150,80 Z" fill="#1A3A10"/><path d="M140,90 Q160,75 170,72 Q180,75 200,90" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/><circle cx="170" cy="72" r="16" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">BAR KOKHBA — FAILED MESSIAH 135 CE</text></svg></div><div class="event-num">17</div><div class="event-body"><div class="event-label">Historical Case</div><div class="event-title">Bar Kokhba — The Failed Messiah</div><div class="event-desc">Simon Bar Kokhba led the last great Jewish revolt against Rome (132–135 CE). Rabbi Akiva, the greatest sage of his time, declared him the Messiah. After initial victories, Rome crushed the revolt and Bar Kokhba was killed. His failure led to defining criteria for authentic Messianic claims.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M80,90 Q130,55 170,60 Q210,55 260,90 L255,155 L85,155 Z" fill="#0A1A08" opacity="0.7"/><text x="170" y="100" text-anchor="middle" font-size="40" fill="#3ABB6A" opacity="0.2">שלום</text><path d="M120,115 Q145,90 170,95 Q195,90 220,115" fill="none" stroke="#3ABB6A" stroke-width="1.5" opacity="0.5"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">WORLD FILLED WITH DIVINE KNOWLEDGE</text></svg></div><div class="event-num">18</div><div class="event-body"><div class="event-label">Spiritual Transformation</div><div class="event-title">Earth Filled with Knowledge of God</div><div class="event-desc">Isaiah 11:9 declares: "The earth shall be full of the knowledge of the Lord as the waters cover the sea." In the Messianic age, every person will intuitively understand and experience the divine. The need for teaching about God will be obsolete — all will simply know.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M80,130 L170,40 L260,130 L240,165 L100,165 Z" fill="#0A1A08" opacity="0.6"/><path d="M130,160 L130,100 Q150,75 170,70 Q190,75 210,100 L210,160" fill="none" stroke="#3ABB6A" stroke-width="0.8" opacity="0.4"/><path d="M145,95 Q158,82 170,78 Q182,82 195,95" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><circle cx="170" cy="78" r="16" fill="#0D2010"/><path d="M162,74 Q166,64 170,62 Q174,64 178,74 Q175,80 170,78 Q165,80 162,74 Z" fill="#3ABB6A" opacity="0.4"/><text x="170" y="172" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">NAZARENE — 300+ PROPHETIC SIGNS</text></svg></div><div class="event-num">19</div><div class="event-body"><div class="event-label">Christian Claim</div><div class="event-title">Jesus Fulfills 300+ Messianic Prophecies</div><div class="event-desc">Christian scholars claim Jesus fulfilled over 300 Old Testament prophecies — from birthplace to manner of death to the casting of lots for his clothing. Statistical arguments are made that the probability of one person fulfilling even 8 of these by chance is astronomically small.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M170,30 L260,140 L80,140 Z" fill="#0A1A08" opacity="0.7"/><path d="M170,50 L240,130 L100,130 Z" fill="#1A3A10" opacity="0.4"/><circle cx="170" cy="75" r="20" fill="#0D2010"/><path d="M160,71 Q165,61 170,58 Q175,61 180,71 Q176,78 170,76 Q164,78 160,71 Z" fill="#C9A84C" opacity="0.4"/><circle cx="170" cy="65" r="14" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.6"/><text x="170" y="160" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">THE MESSIANIC ERA — OLAM HA-BA</text></svg></div><div class="event-num">20</div><div class="event-body"><div class="event-label">The World to Come</div><div class="event-title">Olam Ha-Ba — The World to Come</div><div class="event-desc">Beyond the Messianic era is Olam Ha-Ba — the World to Come — an eternal spiritual reality where souls bask in the divine presence. This is distinct from the earthly Messianic era. Death itself is abolished; the universe returns to its divine root. This is the ultimate goal of all creation.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#030A05"/><path d="M70,90 Q120,55 170,60 Q220,55 270,90 L265,155 L75,155 Z" fill="#0A1A08" opacity="0.6"/><circle cx="120" cy="105" r="10" fill="#1A2A10"/><circle cx="150" cy="95" r="10" fill="#1A2A10"/><circle cx="180" cy="90" r="10" fill="#1A2A10"/><circle cx="210" cy="95" r="10" fill="#1A2A10"/><circle cx="240" cy="105" r="10" fill="#1A2A10"/><path d="M95,130 Q130,110 170,115 Q210,110 245,130" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#3ABB6A" letter-spacing="2">MESSIANIC BANQUET — LEVIATHAN</text></svg></div><div class="event-num">21</div><div class="event-body"><div class="event-label">Eschatological Feast</div><div class="event-title">The Messianic Banquet</div><div class="event-desc">Jewish tradition describes a great feast celebrating the Messianic arrival where the righteous will feast on the flesh of the Leviathan (the primordial sea serpent) and Behemoth, drink aged wine preserved since creation, and sit in the divine light. This imagery appears in Isaiah and later rabbinic literature.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+    </div>
+
+    <div class="quotes-section reveal">
+      <div class="quotes-title">✡ SACRED REFERENCES ☽</div>
+      <div class="quotes-grid">
+        <div class="quote-card"><div class="quote-text">For to us a child is born, to us a son is given, and the government will be on his shoulders. And he will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.</div><div class="quote-source">Isaiah 9:6 — Hebrew Bible</div></div>
+        <div class="quote-card"><div class="quote-text">He will judge between the nations and will settle disputes for many peoples. They will beat their swords into plowshares and their spears into pruning hooks.</div><div class="quote-source">Isaiah 2:4 — Hebrew Bible</div></div>
+        <div class="quote-card"><div class="quote-text">The Meshiah will do signs and wonders and transform the entire world to serve God together, as it is written: "I will make the peoples pure of speech that they all call upon the Name of God."</div><div class="quote-source">Maimonides — Mishneh Torah, Laws of Kings 11</div></div>
+        <div class="quote-card"><div class="quote-text">If the present generation is worthy, the Messiah will come on clouds of heaven; if not worthy, he will come humbly, riding on a donkey.</div><div class="quote-source">Babylonian Talmud — Sanhedrin 98a</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ THE CREATOR SECTION -->
+<div id="creator-section" class="section-wrap" data-theme="creator">
+  <div class="char-header">
+    <div class="char-header-bg" style="background:linear-gradient(135deg,#05000D 0%,#150A2A 40%,#020008 100%);">
+      <svg viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.45">
+        <defs>
+          <radialGradient id="creator-glow" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#A050E0" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1400" height="500" fill="url(#creator-glow)"/>
+        <!-- Sacred geometry — flower of life hint -->
+        <circle cx="700" cy="250" r="80" fill="none" stroke="#A050E0" stroke-width="0.8" opacity="0.3"/>
+        <circle cx="780" cy="250" r="80" fill="none" stroke="#A050E0" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="660" cy="319" r="80" fill="none" stroke="#A050E0" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="740" cy="319" r="80" fill="none" stroke="#A050E0" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="660" cy="181" r="80" fill="none" stroke="#A050E0" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="740" cy="181" r="80" fill="none" stroke="#A050E0" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="620" cy="250" r="80" fill="none" stroke="#A050E0" stroke-width="0.6" opacity="0.2"/>
+        <!-- Outer glow ring -->
+        <circle cx="700" cy="250" r="200" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.15"/>
+        <!-- Om/divine symbol placeholder — radiating lines -->
+        <line x1="700" y1="50" x2="700" y2="450" stroke="#A050E0" stroke-width="0.3" opacity="0.2"/>
+        <line x1="500" y1="250" x2="900" y2="250" stroke="#A050E0" stroke-width="0.3" opacity="0.2"/>
+        <line x1="558" y1="108" x2="842" y2="392" stroke="#A050E0" stroke-width="0.3" opacity="0.15"/>
+        <line x1="842" y1="108" x2="558" y2="392" stroke="#A050E0" stroke-width="0.3" opacity="0.15"/>
+      </svg>
+    </div>
+    <div class="char-header-overlay"></div>
+    <div class="char-header-overlay2"></div>
+    <div class="char-header-content">
+      <div class="char-badge">The Divine · الله · יהוה · God</div>
+      <h1 class="char-name">The Creator</h1>
+      <p class="char-epithet">"In the beginning was the Word, and the Word was with God, and the Word was God"</p>
+      <div class="char-traditions">
+        <span class="tradition-tag">☽ Islam — Allah, Al-Khaliq (The Creator)</span>
+        <span class="tradition-tag">✝ Christianity — Father, Son, Holy Spirit</span>
+        <span class="tradition-tag">✡ Judaism — YHWH, Adonai, Ein Sof</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div class="story-block reveal">
+      <div class="story-text">
+        <h2>The Infinite Divine</h2>
+        <p>At the heart of all three Abrahamic faiths lies a singular conviction: there is one God, the Creator of all existence, before whom no other power stands. Yet the three traditions articulate this unity in profoundly different ways, leading to distinct theologies, worship practices, and visions of the human-divine relationship.</p>
+        <p>In Islam, God is <em>Allah</em> — The God — possessing 99 Beautiful Names (Al-Asma al-Husna) that reveal His attributes: Al-Rahman (The Most Merciful), Al-Khaliq (The Creator), Al-Hakim (The All-Wise). He is absolutely One (Tawhid), transcendent beyond all description, yet "closer to you than your jugular vein."</p>
+        <blockquote>"Say: He is Allah, the One! Allah, the Eternal, Absolute. He begets not, nor was He begotten. And there is none comparable unto Him." — Quran 112:1-4 (Al-Ikhlas)</blockquote>
+        <p>In Judaism, God is YHWH (the unpronounceable Tetragrammaton) — Adonai in prayer. Jewish mysticism describes Ein Sof ("without end"), the infinite Divine beyond all attributes. The Shema prayer encapsulates all: "Hear O Israel: the Lord our God, the Lord is One."</p>
+        <p>Christianity upholds the mystery of the Trinity: the Father, the Son, and the Holy Spirit — three persons, one Being. This doctrine, refined at the Council of Nicaea (325 CE), distinguishes Christianity most sharply from Islam and Judaism.</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-frame">
+          <svg class="svg-art" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="creator-bg-g" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#0A0015"/>
+                <stop offset="100%" stop-color="#03000A"/>
+              </radialGradient>
+              <radialGradient id="divine-glow" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#A050E0" stop-opacity="0.6"/>
+                <stop offset="50%" stop-color="#5A00A0" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="500" height="400" fill="url(#creator-bg-g)"/>
+            <!-- Divine light radiating from center -->
+            <circle cx="250" cy="200" r="200" fill="url(#divine-glow)"/>
+            <!-- Sacred geometry -->
+            <circle cx="250" cy="200" r="90" fill="none" stroke="#A050E0" stroke-width="0.8" opacity="0.4"/>
+            <circle cx="330" cy="200" r="90" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="250" cy="278" r="90" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="250" cy="122" r="90" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="170" cy="200" r="90" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/>
+            <!-- Outer ring -->
+            <circle cx="250" cy="200" r="150" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
+            <!-- Triangle — Trinity -->
+            <polygon points="250,95 355,260 145,260" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.3"/>
+            <!-- Star of David -->
+            <polygon points="250,130 290,195 210,195" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/>
+            <polygon points="250,260 290,195 210,195" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/>
+            <!-- Arabic calligraphy hint -->
+            <text x="250" y="195" text-anchor="middle" font-size="28" fill="#A050E0" opacity="0.3" font-family="serif">الله</text>
+            <!-- Hebrew YHWH hint -->
+            <text x="250" y="225" text-anchor="middle" font-size="18" fill="#C9A84C" opacity="0.3" font-family="serif">יהוה</text>
+            <!-- Light rays from center -->
+            <line x1="250" y1="50" x2="250" y2="10" stroke="#A050E0" stroke-width="0.5" opacity="0.4"/>
+            <line x1="290" y1="60" x2="320" y2="25" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/>
+            <line x1="210" y1="60" x2="180" y2="25" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/>
+            <line x1="330" y1="115" x2="370" y2="85" stroke="#A050E0" stroke-width="0.5" opacity="0.25"/>
+            <line x1="170" y1="115" x2="130" y2="85" stroke="#A050E0" stroke-width="0.5" opacity="0.25"/>
+            <!-- Stars -->
+            <circle cx="80" cy="60" r="1.5" fill="#A050E0" opacity="0.5"/>
+            <circle cx="420" cy="50" r="1" fill="#C9A84C" opacity="0.4"/>
+            <circle cx="50" cy="200" r="1.5" fill="white" opacity="0.3"/>
+            <circle cx="450" cy="180" r="1" fill="white" opacity="0.3"/>
+            <circle cx="100" cy="330" r="1" fill="#A050E0" opacity="0.4"/>
+            <circle cx="400" cy="350" r="1.5" fill="#C9A84C" opacity="0.4"/>
+            <!-- Frame with divine proportion -->
+            <rect x="10" y="10" width="480" height="380" fill="none" stroke="#5A00A0" stroke-width="0.5" opacity="0.4"/>
+          </svg>
+          <div class="visual-caption">THE ETERNAL — Sacred Geometry of the Divine</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider reveal"><div class="divider-line"></div><span class="divider-icon">☀</span><div class="divider-line"></div></div>
+    <h2 class="events-title reveal">20+ Divine Acts & Revelations of The Creator</h2>
+
+    <div class="events-grid reveal">
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><circle cx="170" cy="90" r="70" fill="#0A0015" opacity="0.8"/><circle cx="170" cy="90" r="50" fill="#100020" opacity="0.7"/><circle cx="170" cy="90" r="30" fill="#A050E0" opacity="0.2"/><circle cx="170" cy="90" r="15" fill="#A050E0" opacity="0.3"/><path d="M170,20 L170,10" stroke="#A050E0" stroke-width="0.5" opacity="0.5"/><path d="M226,44 L233,37" stroke="#A050E0" stroke-width="0.5" opacity="0.4"/><path d="M240,90 L250,90" stroke="#A050E0" stroke-width="0.5" opacity="0.4"/><text x="170" y="90" text-anchor="middle" font-size="24" fill="#A050E0" opacity="0.3">كُن</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE DIVINE COMMAND: BE — KUN</text></svg></div><div class="event-num">01</div><div class="event-body"><div class="event-label">The Creation</div><div class="event-title">"Be!" — The Word of Creation</div><div class="event-desc">In Islam, the Creator's method of creation is the divine command "Kun!" (Be!). The Quran states: "When He decrees a matter, He only says 'Be!' and it is." This same creative word — the Logos — appears in John 1:1 and parallels the Hebrew "Yehi" (Let there be) of Genesis.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M0,90 Q85,70 170,85 Q255,100 340,80" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.4"/><circle cx="80" cy="80" r="15" fill="#3A2010" opacity="0.8"/><!-- Sun --><circle cx="260" cy="85" r="10" fill="#1A1A2A" opacity="0.8"/><!-- Moon --><path d="M60,130 Q100,110 140,125 Q180,140 220,120 Q260,105 300,130" fill="none" stroke="#1A2A10" stroke-width="1.5" opacity="0.6"/><!-- Earth --><rect x="145" y="60" width="50" height="70" rx="5" fill="#0D0020" opacity="0.7"/><!-- Tablet --><path d="M155,80 Q162,72 170,70 Q178,72 185,80 Q182,88 170,86 Q158,88 155,80 Z" fill="#A050E0" opacity="0.3"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">SIX DAYS OF CREATION</text></svg></div><div class="event-num">02</div><div class="event-body"><div class="event-label">Cosmogony</div><div class="event-title">Creation in Six Days</div><div class="event-desc">Genesis describes creation over six days: light, firmament, land and sea, celestial bodies, creatures, and finally Adam. The Quran confirms creation in six "periods" (ayyam), leaving open whether these are literal or cosmic epochs. On the seventh day, the Bible says God rested; the Quran states God does not tire.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M0,140 Q85,120 170,130 Q255,140 340,120 L340,180 L0,180 Z" fill="#0A0015"/><circle cx="170" cy="90" r="30" fill="#0A0020"/><path d="M155,80 Q162,65 170,62 Q178,65 185,80 Q180,90 170,88 Q160,90 155,80 Z" fill="#A050E0" opacity="0.4"/><path d="M140,90 L200,90" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/><path d="M170,62 L170,118" stroke="#C9A84C" stroke-width="0.5" opacity="0.4" stroke-dasharray="3,2"/><text x="250" y="80" text-anchor="middle" font-size="15" fill="#A050E0" opacity="0.3">روح</text><!-- Ruh - spirit --><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">CREATION OF ADAM FROM CLAY</text></svg></div><div class="event-num">03</div><div class="event-body"><div class="event-label">Creation of Humanity</div><div class="event-title">Adam Created from Clay and Divine Breath</div><div class="event-desc">God fashioned Adam from clay (or dust) and breathed His own spirit (ruh/neshamah) into him. This act makes humans unique — carrying within them a divine spark. The angels were commanded to bow to Adam; Iblis (Satan) refused out of pride, beginning the cosmic drama of free will and disobedience.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M80,140 L170,30 L260,140 Z" fill="#0A0018" opacity="0.7"/><path d="M130,120 L170,65 L210,120" fill="#1A0030" opacity="0.5"/><path d="M155,50 L155,130 L185,130 L185,50" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/><path d="M130,90 L210,90" stroke="#C9A84C" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/><circle cx="170" cy="90" r="20" fill="#200040" opacity="0.8"/><text x="170" y="96" text-anchor="middle" font-size="15" fill="#A050E0" opacity="0.5">▲</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE TRINITY — CHRISTIAN DOCTRINE</text></svg></div><div class="event-num">04</div><div class="event-body"><div class="event-label">Christian Theology</div><div class="event-title">The Mystery of the Trinity</div><div class="event-desc">Christianity proclaims one God existing as three coequal, coeternal persons: the Father (Creator), the Son (Redeemer), and the Holy Spirit (Sanctifier). The doctrine developed over centuries through councils, creeds, and theological debate. It remains the central theological distinction from Islam and Judaism.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M120,160 L120,60 Q150,35 170,35 Q190,35 220,60 L220,160" fill="none" stroke="#A050E0" stroke-width="0.8" opacity="0.4"/><path d="M80,160 Q100,120 100,80 Q100,40 120,40" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/><path d="M260,160 Q240,120 240,80 Q240,40 220,40" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/><text x="170" y="90" text-anchor="middle" font-size="18" fill="#C9A84C" opacity="0.4">יהוה</text><path d="M150,100 Q160,88 170,85 Q180,88 190,100" fill="none" stroke="#A050E0" stroke-width="1" opacity="0.5"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">YHWH — THE UNPRONOUNCEABLE NAME</text></svg></div><div class="event-num">05</div><div class="event-body"><div class="event-label">Jewish Theology</div><div class="event-title">The Ineffable Name — YHWH</div><div class="event-desc">The four Hebrew letters Yod-Heh-Vav-Heh (YHWH) form the most sacred name of God in Judaism, revealed to Moses at the burning bush. It is so holy that it is never pronounced — substituted with "Adonai" (Lord) in prayer and "HaShem" (The Name) in daily speech. Its original pronunciation is lost.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M80,130 Q140,80 170,75 Q200,80 260,130 L255,155 L85,155 Z" fill="#0A0018"/><path d="M130,130 L130,90 Q150,65 170,60 Q190,65 210,90 L210,130" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/><path d="M150,155 L150,95" stroke="#A050E0" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/><path d="M190,155 L190,95" stroke="#A050E0" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,2"/><circle cx="170" cy="62" r="18" fill="#150030"/><path d="M160,58 Q165,48 170,45 Q175,48 180,58 Q176,65 170,63 Q164,65 160,58 Z" fill="#C9A84C" opacity="0.4"/><text x="170" y="170" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE 99 NAMES OF ALLAH</text></svg></div><div class="event-num">06</div><div class="event-body"><div class="event-label">Islamic Theology</div><div class="event-title">The 99 Beautiful Names of Allah</div><div class="event-desc">The Quran and Sunnah describe Allah through 99 names — Al-Asma al-Husna — each revealing a divine attribute: Al-Rahman (The Merciful), Al-Ghafur (The Forgiving), Al-Qahhar (The Subduer), Al-Wadud (The Loving). The Prophet ﷺ said: "Allah has 99 names; whoever memorizes them enters Paradise."</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M170,40 Q220,80 220,130 Q200,160 170,165 Q140,160 120,130 Q120,80 170,40 Z" fill="#0A0018"/><path d="M0,130 Q85,100 170,115 Q255,130 340,100 L340,180 L0,180 Z" fill="#0A0015" opacity="0.8"/><path d="M155,70 Q165,52 170,48 Q175,52 185,70 Q180,82 170,80 Q160,82 155,70 Z" fill="#A050E0" opacity="0.3"/><circle cx="170" cy="65" r="22" fill="none" stroke="#A050E0" stroke-width="1" opacity="0.5"/><circle cx="170" cy="65" r="30" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">GOD SPEAKS TO MOSES — THE BURNING BUSH</text></svg></div><div class="event-num">07</div><div class="event-body"><div class="event-label">Divine Revelation</div><div class="event-title">God Speaks to Moses at the Burning Bush</div><div class="event-desc">At Mount Horeb, God appeared to Moses in a burning bush that was not consumed by flame. He revealed His name as "I AM WHO I AM" (Ehyeh Asher Ehyeh), commissioned Moses to free the Israelites from Egypt, and began the most documented human-divine dialogue in scripture.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M170,155 Q80,130 50,90 Q40,50 80,35 Q120,20 170,50 Q220,20 260,35 Q300,50 290,90 Q260,130 170,155 Z" fill="#0A0018"/><path d="M80,100 Q120,65 170,70 Q220,65 260,100 Q255,135 230,145 Q200,155 170,152 Q140,155 110,145 Q85,135 80,100 Z" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/><text x="170" y="100" text-anchor="middle" font-size="28" fill="#A050E0" opacity="0.2">שמע</text><text x="170" y="122" text-anchor="middle" font-size="14" fill="#C9A84C" opacity="0.2">يَهوَه أَحَد</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE SHEMA — THE DIVINE ONENESS</text></svg></div><div class="event-num">08</div><div class="event-body"><div class="event-label">Proclamation of Oneness</div><div class="event-title">The Shema — "Hear O Israel: God is One"</div><div class="event-desc">The Shema (Deuteronomy 6:4) is the central declaration of Jewish faith and the prayer said at morning, evening, and on one's deathbed: "Shema Yisrael: Adonai Eloheinu, Adonai Echad." It mirrors the Islamic Shahada's declaration of Tawhid and is the theological foundation of all Abrahamic monotheism.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M60,100 Q100,60 140,75 Q165,55 170,50 Q175,55 200,75 Q240,60 280,100 L275,155 L65,155 Z" fill="#0A0018" opacity="0.7"/><path d="M60,100 Q100,60 140,75" fill="none" stroke="#A050E0" stroke-width="1" opacity="0.4"/><path d="M200,75 Q240,60 280,100" fill="none" stroke="#A050E0" stroke-width="1" opacity="0.4"/><path d="M130,130 L170,70 L210,130 Z" fill="#200040" opacity="0.5"/><text x="170" y="108" text-anchor="middle" font-size="12" fill="#A050E0" opacity="0.5">٣</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">TEN COMMANDMENTS GIVEN TO MOSES</text></svg></div><div class="event-num">09</div><div class="event-body"><div class="event-label">Divine Law</div><div class="event-title">The Ten Commandments at Mount Sinai</div><div class="event-desc">God descended upon Mount Sinai in fire and thunder, the mountain trembling, and gave Moses the Ten Commandments written on stone tablets by the "finger of God." These commandments form the ethical foundation of all three Abrahamic faiths and much of Western law and morality.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M0,120 Q85,95 170,105 Q255,115 340,90 L340,180 L0,180 Z" fill="#050015"/><path d="M170,160 L170,20" stroke="#A050E0" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.4"/><path d="M90,110 Q130,70 170,75 Q210,70 250,110 Q245,135 220,145 Q195,155 170,152 Q145,155 120,145 Q95,135 90,110 Z" fill="#0A0018"/><circle cx="170" cy="90" r="22" fill="#1A0035"/><path d="M160,86 Q165,76 170,73 Q175,76 180,86 Q176,93 170,91 Q164,93 160,86 Z" fill="#C9A84C" opacity="0.4"/><circle cx="170" cy="80" r="15" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">QURAN REVEALED TO PROPHET ﷺ</text></svg></div><div class="event-num">10</div><div class="event-body"><div class="event-label">Final Revelation</div><div class="event-title">The Quran Revealed Over 23 Years</div><div class="event-desc">Allah revealed the Quran to the Prophet Muhammad ﷺ through the angel Jibreel over 23 years — beginning in the Cave of Hira in 610 CE. The Quran is considered the literal word of God in Arabic, preserved without alteration. Muslims believe it is the final divine message to humanity.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M60,90 Q100,55 170,60 Q240,55 280,90 L275,155 L65,155 Z" fill="#0A0018"/><path d="M0,140 Q85,115 170,130 Q255,145 340,115 L340,180 L0,180 Z" fill="#050015" opacity="0.8"/><path d="M130,115 L130,70 Q150,50 170,45 Q190,50 210,70 L210,115" fill="none" stroke="#A050E0" stroke-width="0.8" opacity="0.4"/><circle cx="170" cy="52" r="18" fill="#150030"/><path d="M162,48 Q166,38 170,35 Q174,38 178,48 Q175,55 170,53 Q165,55 162,48 Z" fill="#A050E0" opacity="0.4"/><circle cx="170" cy="42" r="12" fill="none" stroke="#A050E0" stroke-width="1" opacity="0.5"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE GREAT FLOOD — NOAH'S ARK</text></svg></div><div class="event-num">11</div><div class="event-body"><div class="event-label">Divine Judgment</div><div class="event-title">The Great Flood and Noah's Ark</div><div class="event-desc">God's grief at human corruption led to the Great Flood — a divine reset of creation. Noah (Nuh in Islam) was commanded to build an ark and preserve life. The flood is recorded in Genesis, the Quran (Surah Nuh), and ancient Mesopotamian texts, suggesting a universal cultural memory of this event.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><circle cx="170" cy="90" r="60" fill="#0A0018" opacity="0.8"/><circle cx="170" cy="90" r="40" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/><circle cx="170" cy="90" r="20" fill="#150030"/><text x="170" y="97" text-anchor="middle" font-size="18" fill="#A050E0" opacity="0.5">∞</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">EIN SOF — THE INFINITE GOD</text></svg></div><div class="event-num">12</div><div class="event-body"><div class="event-label">Jewish Mysticism</div><div class="event-title">Ein Sof — The Infinite Without End</div><div class="event-desc">Kabbalistic Judaism describes the ultimate divine reality as Ein Sof — "without end." Beyond all names and attributes. Creation flows through ten Sefirot (divine emanations), channeling infinite light into the finite world. God is simultaneously utterly transcendent and intimately present in every atom of existence.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><circle cx="170" cy="80" r="35" fill="#0A0018"/><path d="M155,68 Q163,52 170,48 Q177,52 185,68 Q180,80 170,78 Q160,80 155,68 Z" fill="#A050E0" opacity="0.4"/><circle cx="170" cy="62" r="22" fill="none" stroke="#C9A84C" stroke-width="1" opacity="0.5"/><path d="M100,130 Q135,100 170,105 Q205,100 240,130" fill="none" stroke="#A050E0" stroke-width="1" opacity="0.4"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">IBRAHIM TESTED — EID AL-ADHA</text></svg></div><div class="event-num">13</div><div class="event-body"><div class="event-label">Divine Test</div><div class="event-title">God Tests Ibrahim / Abraham</div><div class="event-desc">God commanded Ibrahim to sacrifice his beloved son. At the moment of sacrifice God intervened, providing a ram. This supreme test established the Abrahamic covenant. It is commemorated annually in Islam as Eid al-Adha, and echoed in the Jewish reading of the Akedah on Rosh Hashanah.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><circle cx="80" cy="80" r="22" fill="#2A1000" opacity="0.9"/><path d="M60,80 L100,80 M80,58 L80,102 M65,65 L95,95 M95,65 L65,95" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/><circle cx="265" cy="78" r="15" fill="#0A0A1A" opacity="0.8"/><circle cx="272" cy="72" r="12" fill="#050008" opacity="0.95"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">CREATION OF LIGHT — DAY ONE</text></svg></div><div class="event-num">14</div><div class="event-body"><div class="event-label">First Act</div><div class="event-title">"Let There Be Light" — The First Creation</div><div class="event-desc">The first divine command in Genesis is "Yehi Or" — Let there be light. This primordial light preceded the sun and stars by three days, leading Kabbalists to call it Or Ein Sof — the infinite spiritual light still hidden within creation, accessible only to the righteous in the World to Come.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M130,155 L130,80 Q150,55 170,50 Q190,55 210,80 L210,155" fill="none" stroke="#A050E0" stroke-width="0.8" opacity="0.4"/><circle cx="170" cy="62" r="22" fill="#1A0035"/><text x="170" y="68" text-anchor="middle" font-size="14" fill="#A050E0" opacity="0.5">سُبْحَان</text><path d="M100,120 Q135,95 170,100 Q205,95 240,120" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE 99 NAMES — AR-RAHMAN</text></svg></div><div class="event-num">15</div><div class="event-body"><div class="event-label">Divine Mercy</div><div class="event-title">Ar-Rahman — The Overflowing Mercy</div><div class="event-desc">A hadith states God has divided mercy into 100 parts, keeping 99 for the Day of Judgment and releasing only one part onto all of creation — and from that single drop of mercy, every mother's tenderness, every creature's compassion flows. The fullness of divine mercy awaits those who return to Him.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M80,90 Q120,55 170,60 Q220,55 260,90 L255,155 L85,155 Z" fill="#0A0018"/><circle cx="170" cy="85" r="28" fill="#1A0035"/><text x="170" y="80" text-anchor="middle" font-size="11" fill="#A050E0" opacity="0.5">بِسْمِ اللَّهِ</text><text x="170" y="97" text-anchor="middle" font-size="9" fill="#C9A84C" opacity="0.4">בְּרֵאשִׁית</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">AYAT AL-KURSI — THE THRONE VERSE</text></svg></div><div class="event-num">16</div><div class="event-body"><div class="event-label">Supreme Verse</div><div class="event-title">Ayat al-Kursi — The Throne Verse</div><div class="event-desc">Quran 2:255 is considered the mightiest verse in existence: "Allah — there is no deity except Him, the Ever-Living, the Sustainer. Neither drowsiness overtakes Him nor sleep. His Kursi (throne) extends over the heavens and earth, and their preservation tires Him not." Recited for protection by Muslims worldwide.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M130,160 L130,60 Q150,38 170,35 Q190,38 210,60 L210,160" fill="none" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/><circle cx="170" cy="50" r="22" fill="#150030"/><circle cx="170" cy="50" r="14" fill="#200040"/><text x="170" y="56" text-anchor="middle" font-size="14" fill="#C9A84C" opacity="0.5">☩</text><path d="M100,120 Q135,95 170,100 Q205,95 240,120" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.4"/><text x="170" y="168" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE INCARNATION — GOD BECOMES MAN</text></svg></div><div class="event-num">17</div><div class="event-body"><div class="event-label">Christian Doctrine</div><div class="event-title">The Incarnation — God Becomes Human</div><div class="event-desc">Christianity's most radical claim: the infinite God became finite flesh in Jesus Christ. Two natures — fully divine, fully human — in one person. Rejected by Islam (which upholds God's absolute transcendence) and Judaism, but for Christians, this act of divine humility is the supreme expression of God's love.</div><div class="event-traditions"><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><circle cx="170" cy="90" r="65" fill="#0A0018" opacity="0.7"/><text x="170" y="80" text-anchor="middle" font-size="12" fill="#A050E0" opacity="0.35">الله</text><text x="170" y="98" text-anchor="middle" font-size="12" fill="#C9A84C" opacity="0.35">יהוה</text><text x="170" y="115" text-anchor="middle" font-size="10" fill="#7AB0E8" opacity="0.35">GOD</text><circle cx="170" cy="90" r="75" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3" stroke-dasharray="4,4"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE DAY OF JUDGMENT</text></svg></div><div class="event-num">18</div><div class="event-body"><div class="event-label">Final Reckoning</div><div class="event-title">The Day of Judgment — Yawm al-Qiyamah</div><div class="event-desc">All three faiths affirm a final Day when God resurrects every soul and judges their deeds with perfect justice. In Islam: the scales will be set, deeds weighed, and every soul will cross the Sirat bridge. In Judaism: God as judge sits on the throne of justice. In Christianity: Christ returns as judge of all.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M170,155 Q70,125 45,80 Q40,35 80,22 Q120,10 160,38 Q165,28 170,25 Q175,28 180,38 Q220,10 260,22 Q300,35 295,80 Q270,125 170,155 Z" fill="#0A0018"/><path d="M80,100 Q120,65 170,70 Q220,65 260,100" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/><circle cx="170" cy="88" r="30" fill="#0D0020"/><circle cx="170" cy="88" r="18" fill="#150030"/><circle cx="170" cy="88" r="8" fill="#A050E0" opacity="0.3"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE SHEKINAH — DIVINE PRESENCE</text></svg></div><div class="event-num">19</div><div class="event-body"><div class="event-label">Divine Presence</div><div class="event-title">The Shekinah — God Dwells Among Us</div><div class="event-desc">In Jewish mysticism, the Shekinah is the feminine divine presence that fills sacred spaces — first the Tabernacle, then the Temple. After the Temple's destruction, the Shekinah went into exile with the Jewish people. The Talmud teaches it rests between husband and wife in a loving marriage.</div><div class="event-traditions"><span class="etag jewish">✡ Judaism</span><span class="etag christian">✝ Christian</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><path d="M60,100 Q100,60 170,65 Q240,60 280,100 L275,155 L65,155 Z" fill="#0A0018"/><path d="M120,150 L120,80 Q145,58 170,55 Q195,58 220,80 L220,150" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.4" stroke-dasharray="3,2"/><circle cx="170" cy="68" r="24" fill="#150030"/><circle cx="170" cy="68" r="14" fill="#200040"/><text x="170" y="73" text-anchor="middle" font-size="14" fill="#A050E0" opacity="0.6">☀</text><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE COVENANT — ETERNAL PROMISE</text></svg></div><div class="event-num">20</div><div class="event-body"><div class="event-label">Covenant</div><div class="event-title">God's Eternal Covenant with Humanity</div><div class="event-desc">From Noah to Abraham to Moses to Muhammad ﷺ, God has repeatedly initiated covenants with humanity — promises, obligations, and relationships. The Abrahamic Covenant, the Sinai Covenant, the New Covenant of Christianity, and the Final Message of Islam are all chapters of one divine story of relationship.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+
+      <div class="event-card"><div class="event-card-art"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg"><rect width="340" height="180" fill="#050008"/><circle cx="170" cy="90" r="70" fill="#0A0018" opacity="0.6"/><circle cx="170" cy="90" r="55" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.3"/><circle cx="170" cy="90" r="40" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.25"/><circle cx="170" cy="90" r="25" fill="none" stroke="#A050E0" stroke-width="0.5" opacity="0.2"/><circle cx="170" cy="90" r="10" fill="#A050E0" opacity="0.2"/><text x="170" y="165" text-anchor="middle" font-family="serif" font-size="9" fill="#A050E0" letter-spacing="2">THE WORLD TO COME — OLAM HA-BA</text></svg></div><div class="event-num">21</div><div class="event-body"><div class="event-label">Ultimate Destiny</div><div class="event-title">Olam Ha-Ba — The World to Come</div><div class="event-desc">Beyond judgment and resurrection, all three traditions envision an eternal state of divine proximity. In Islam: Jannah (Paradise), where "no eye has seen, no ear has heard, and no heart has imagined." In Judaism: Olam Ha-Ba, basking in the divine light. In Christianity: the New Jerusalem, dwelling with God forever.</div><div class="event-traditions"><span class="etag islam">☽ Islam</span><span class="etag christian">✝ Christian</span><span class="etag jewish">✡ Judaism</span></div></div></div>
+    </div>
+
+    <div class="quotes-section reveal">
+      <div class="quotes-title">☀ SACRED REFERENCES ✡</div>
+      <div class="quotes-grid">
+        <div class="quote-card"><div class="quote-text">Say: He is Allah, the One — the Eternal, Absolute. He begets not, nor was He begotten, and there is none comparable unto Him.</div><div class="quote-source">Quran 112 — Surah Al-Ikhlas</div></div>
+        <div class="quote-card"><div class="quote-text">Hear, O Israel: The Lord our God, the Lord is One. Love the Lord your God with all your heart and with all your soul and with all your strength.</div><div class="quote-source">Deuteronomy 6:4–5 — The Shema</div></div>
+        <div class="quote-card"><div class="quote-text">In the beginning, God created the heavens and the earth. The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the waters.</div><div class="quote-source">Genesis 1:1–2 — Torah / Old Testament</div></div>
+        <div class="quote-card"><div class="quote-text">Allah does not burden a soul beyond that it can bear. It will have the reward of what it earns, and bear the consequence of what it commits.</div><div class="quote-source">Quran 2:286</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">✦ Prophetic Chronicles</div>
+  <div class="footer-note">A scholarly comparative study of sacred narratives across Islam, Christianity and Judaism. All traditions presented with equal respect.</div>
+  <div class="footer-note">☽ Islam · ✝ Christianity · ✡ Judaism</div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    nav.classList.toggle('visible', window.scrollY > 80);
+  });
+
+  function showHome() {
+    document.getElementById('home-section').style.display = 'block';
+    ['dajjal','isha','meshiah','creator'].forEach(c => {
+      document.getElementById(c+'-section').classList.remove('active');
+    });
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function showSection(char) {
+    document.getElementById('home-section').style.display = 'none';
+    ['dajjal','isha','meshiah','creator'].forEach(c => {
+      document.getElementById(c+'-section').classList.toggle('active', c === char);
+    });
+    document.querySelectorAll('.nav-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.char === char);
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+    setTimeout(() => {
+      document.querySelectorAll('#'+char+'-section .reveal').forEach((el, i) => {
+        setTimeout(() => el.classList.add('shown'), i * 100);
+      });
+    }, 200);
+  }
+
+  document.querySelectorAll('.char-card').forEach(card => {
+    card.addEventListener('click', () => showSection(card.dataset.char));
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('shown'); });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
